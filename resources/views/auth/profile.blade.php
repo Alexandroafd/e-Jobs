@@ -1,6 +1,6 @@
 @extends('base')
 
-@section('title', 'Mon profile')
+@section('title', 'Mon profil')
 
 @section('content')
 
@@ -18,11 +18,11 @@
                 <li><a href="{{ route('auth.logout') }}"><i class="la la-sign-out"></i>Déconnexion</a></li>
                 <li><a href="{{ route('auth.deleteProfile') }}"><i class="la la-trash"></i>Supprimer le Profile</a></li>
               </ul>
-      
+
               <div class="skills-percentage">
                 <h4>Pourcentage de compétences</h4>
                 <p>Valeur de mise pour le champ d'image de couverture pour augmenter votre compétence jusqu'à "85%"</p>
-      
+
                 <!-- Pie Graph -->
                 <div class="pie-graph">
                   <div class="graph-outer">
@@ -34,7 +34,7 @@
             </div>
           </div>
           <!-- End User Sidebar -->
-    
+
         <!-- Dashboard -->
 
     <!-- Dashboard -->
@@ -78,13 +78,13 @@
                         <label>Image</label>
                         <input type="file" name="image" id="image">
                      </div> -->
-        
+
                     <div class="row">
                       <!-- Input -->
                       <div class="form-group col-lg-6 col-md-12">
                         <label>Nom</label>
                         <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" id="name" placeholder="Jérome" value="{{ $user->name }}">
-                        @error('name') 
+                        @error('name')
                             <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                         @enderror
                       </div>
