@@ -70,10 +70,9 @@
 
                     @if (!empty($job->responsability))
                     <div class="job-detail">
-                        <h4> Description </h4>
+                        <h4> Rsponsabilités </h4>
                         <p> {!! nL2br ($job->responsability) !!} </p>
                     @endif
-                    
                         <h4>Expérience : {{ $job->experience }} an(s)</h4>
                     </div>
       

@@ -75,9 +75,9 @@ class AuthController extends Controller
                 'type' => 'Bearer'
             ])->cookie('jwt', $token); */
 
-            if($user->user_type === 'candidat'){
+            if($user->user_type == 'candidat'){
                 return redirect()->route('auth.profile')->with('success','Inscription réussie');
-            } elseif($user->user_type === 'employer'){
+            } elseif($user->user_type == 'employer'){
                 return redirect()->route('auth.createJob')->with('success','Inscription réussie');
             }
             return redirect()->route('auth.login', $request->$token)->with('success','Inscription réussie');
@@ -141,10 +141,10 @@ class AuthController extends Controller
                 // Supprimer le cookie si "Se rappeler de moi" n'est pas coché
                 cookie()->forget('email');
             }
-            
-            if ($user->user_type === 'candidat') {
+
+            if ($user->user_type == 'candidat') {
                 return redirect()->route('auth.profile');
-            } elseif ($user->user_type === 'employer') {
+            } elseif ($user->user_type == 'employer') {
                 return redirect()->route('auth.createJob');
             }
         }

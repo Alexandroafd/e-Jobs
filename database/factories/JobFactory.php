@@ -25,7 +25,7 @@ class JobFactory extends Factory
             'user_id' => rand(1, 10),
             'salary' => rand(100, 10000),
             'experience' => rand(1, 10),
-            'responsability' => rand(1, 10),
+            'responsability' => fake()->text,
             'genre' => $type,
             'date_limite' => fake()->date('Y-m-d'),
             'country' => fake()->country,

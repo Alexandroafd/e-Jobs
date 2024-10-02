@@ -297,9 +297,12 @@
               <a href="candidate-dashboard-cv-manager.html" class="upload-cv"> Upload your CV</a> -->
               <!-- Login/Register btn-box -->
               <div class="">
-                <a href="{{ route('auth.register') }}" class="theme-btn btn-style-three">Connexion / Inscription</a>  <!--class="theme-btn btn-style-three call-modal"-->
-                @if (Auth::user())
-                <a href="{{ route('auth.createJob') }}" class="theme-btn btn-style-one">Poster un emploi</a>
+                @if (!Auth::check())
+                    <a href="{{ route('auth.register') }}" class="theme-btn btn-style-three">Connexion / Inscription</a>  <!--class="theme-btn btn-style-three call-modal"-->
+                @else
+                    @if (Auth::user()->user_type == 'employer')
+                        <a href="{{ route('auth.createJob') }}" class="theme-btn btn-style-one">Poster un emploi</a>
+                    @endif
                 @endif
               </div>
             </div>

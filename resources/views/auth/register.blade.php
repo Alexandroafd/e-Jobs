@@ -140,7 +140,7 @@
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <input type="radio" id="employer" name="user_type" value="employer" required>
-                        <label for="employer"> Employer </label>
+                        <label for="employer"> Employeur </label>
                     </div>
                 </div>
 

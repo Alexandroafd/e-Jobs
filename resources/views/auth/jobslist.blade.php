@@ -12,7 +12,7 @@
     
           <div class="sidebar-inner">
             <ul class="navigation">
-                <li><a href="{{ route('auth.dashboard') }}"> <i class="la la-home"></i> Dashboard</a></li>
+                {{--<li><a href="{{ route('auth.dashboard') }}"> <i class="la la-home"></i> Dashboard</a></li>--}}
                 <li><a href="{{ route('auth.profile') }}"><i class="la la-user-tie"></i>Mon Profil</a></li>
                 <li class="active"><a href="{{ route('auth.jobslist') }}"><i class="la la-bookmark-o"></i>Emplois Sélectionnés</a></li>
                 <!-- <li><a href="dashboard-packages.html"><i class="la la-box"></i>Pacquets</a></li> -->

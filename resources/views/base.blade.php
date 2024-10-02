@@ -42,11 +42,11 @@
               <div class="logo-box">
                 <div class="logo"><a href="{{ route('home') }}"><img src="{{ asset('images/logo.svg') }}" alt="" title=""></a></div>
               </div>
-  
+
               @php
                   $route = request()->route()->getName();
               @endphp
-  
+
   <nav class="nav main-menu">
     <ul class="navigation" id="navbar">
       <li class="">
@@ -104,7 +104,7 @@
         <!-- <ul>
           <li><a href="job-list-v5.html">Liste des emplois</a></li>
           <li><a href="blog-list-v2.html">Blog LIst v2</a></li>
-          <li><a href="blog-list-v3.html">Blog LIst v3</a></li> 
+          <li><a href="blog-list-v3.html">Blog LIst v3</a></li>
           <li><a href="job-single-3.html">Emploi unique</a></li>
         </ul> -->
       <!-- <li class="dropdown has-mega-menu" id="has-mega-menu">
@@ -118,7 +118,7 @@
                 <li><a href="job-list-v1.html">Jobs List – v1</a></li>
                 <li><a href="job-list-v2.html">Jobs List – v2</a></li>
                 <li><a href="job-list-v3.html">Jobs List – v3</a></li>
-                <li><a href="job-list-v4.html">Jobs List – v4</a></li> 
+                <li><a href="job-list-v4.html">Jobs List – v4</a></li>
               </ul>
             </div> -->
 
@@ -141,8 +141,8 @@
                 <li><a href="job-list-v15.html">Jobs List – v15</a></li>
                 <li><a href="job-list-v16.html">Jobs List – v16</a></li>
                 <li><a href="job-list-v17.html">Jobs List – v17</a></li>
-              </ul> 
-            </div> 
+              </ul>
+            </div>
 
             <div class="column col-lg-3 col-md-3 col-sm-12">
               <ul>
@@ -151,11 +151,11 @@
                 <!-- <li><a href="job-single-4.html">Job Single v4</a></li>
                 <li><a href="job-single-5.html">Job Single v5</a></li>
                 <li><a href="job-single-6.html">Job Single v6</a></li>
-                <li><a href="job-single-7.html">Job Single v7</a></li> 
+                <li><a href="job-single-7.html">Job Single v7</a></li>
               </ul>
             </div>
           </div>
-        </div> 
+        </div>
       </li> -->
 
       {{--<li class="dropdown">
@@ -164,7 +164,7 @@
           <li><a href="employers-list-v3.html">Liste des employeurs</a></li>
           <li><a href="employers-single-v3.html">Employeurs unique</a></li>
           <li><a href="dashboard.html">Employeurs Dashboard</a></li>
-        </ul> 
+        </ul>
       </li>--}}
 
       <!-- <li class="dropdown">
@@ -185,8 +185,8 @@
 
           <li class="dropdown">
              <ul>
-              <li><a href="employers-single-v1.html">Employers Single v1</a></li> 
-              <li><a href="employers-single-v2.html">Employers Single v2</a></li> 
+              <li><a href="employers-single-v1.html">Employers Single v1</a></li>
+              <li><a href="employers-single-v2.html">Employers Single v2</a></li>
             </ul>
           </li> -->
         <li class="dropdown">
@@ -206,7 +206,7 @@
         <a href="{{ route('liste.candidat') }}" @class(['nav-link', 'active' => str_contains($route, 'liste.')])>Candidats</a>
          <ul>
                <li><a href="candidates-list-v1.html">Candidates LIst v1</a></li>
-              <li><a href="candidates-list-v2.html">Candidates LIst v2</a></li> 
+              <li><a href="candidates-list-v2.html">Candidates LIst v2</a></li>
               <li><a href="candidates-list-v3.html">Liste des candidats</a></li>
               <li><a href="candidates-single-v1.html">Candidat unique</a></li>
               <li><a href="candidate-dashboard.html">Candidat Dashboard</a></li>
@@ -215,8 +215,8 @@
              <!-- <li><a href="candidates-list-v4.html">Candidates LIst v4</a></li>
               <li><a href="candidates-list-v5.html">Candidates LIst v5</a></li>
               <li><a href="candidates-list-v6.html">Candidates LIst v6</a></li>
-              <li><a href="candidates-list-v7.html">Candidates LIst v7</a></li> 
-            </ul> 
+              <li><a href="candidates-list-v7.html">Candidates LIst v7</a></li>
+            </ul>
           </li>
 
           <li class="dropdown">
@@ -231,10 +231,10 @@
         <ul>
           <li><a href="blog-list-v1.html">Blog List</a></li>
            <li><a href="blog-list-v2.html">Blog LIst v2</a></li>
-          <li><a href="blog-list-v3.html">Blog LIst v3</a></li> 
+          <li><a href="blog-list-v3.html">Blog LIst v3</a></li>
           <li><a href="blog-single.html">Blog Single</a></li>
         </ul>
-      </li> 
+      </li>
 
       <li class="dropdown">
         <span>Pages</span>
@@ -260,7 +260,7 @@
             </ul>
           </li>
           <li><a href="about.html">About</a></li>
-          <li><a href="pricing.html">Pricing</a></li> 
+          <li><a href="pricing.html">Pricing</a></li>
           <li><a href="faqs.html">FAQ's</a></li>
           <li><a href="terms.html">Terms</a></li>
           <li><a href="invoice.html">Invoice</a></li>
@@ -290,27 +290,30 @@
   </nav>
   <!-- Main Menu End-->
             </div>
-  
+
             <div class="outer-box">
-  
+
               <button class="menu-btn">
                 <span class="count">1</span>
                 <span class="icon la la-heart-o"></span>
               </button>
-  
+
               <button class="menu-btn">
                 <span class="icon la la-bell"></span>
               </button>
-  
+
               <!-- Dashboard Option -->
                <div class="dropdown dashboard-option">
                 @if (!Auth::check())
-                <a href="{{ route('auth.login') }}" class="theme-btn btn-style-three call-modal">Connexion</a>  <!--class="theme-btn btn-style-three call-modal"-->
+                    <a href="{{ route('auth.login') }}" class="theme-btn btn-style-three call-modal">Connexion</a>  <!--class="theme-btn btn-style-three call-modal"-->
                 @else
                     @if (Auth::user()->role == 'admin')
                         <a href="{{ route('admin.dashboard') }}" class="theme-btn btn-style-three call-modal">Admin</a>
+                    @else
+                        @if (Auth::user()->user_type == 'employer')
+                            <a href="{{ route('auth.createJob') }}" class="theme-btn btn-style-one">Poster un emploi</a>
+                        @endif
                     @endif
-                    <a href="{{ route('auth.createJob') }}" class="theme-btn btn-style-one">Poster un emploi</a> 
                 @endif
                <!-- <a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">
                   <img src="images/resource/company-6.png" alt="avatar" class="thumb">
@@ -331,31 +334,31 @@
                   <li><a href="index.html"><i class="la la-sign-out"></i>Logout</a></li>
                   <li><a href="dashboard-delete.html"><i class="la la-trash"></i>Delete Profile</a></li>
                 </ul> -->
-              </div> 
+              </div>
             </div>
           </div>
         </div>
-  
+
         <!-- Mobile Header -->
         <div class="mobile-header">
           <div class="logo"><a href="{{ route('home') }}"><img src="{{ asset('images/logo.svg') }}" alt="" title=""></a></div>
-  
+
           <!--Nav Box-->
           <div class="nav-outer clearfix">
-  
+
             <div class="outer-box">
               <!-- Login/Register -->
               <div class="login-box">
                 <a href="{{ route('auth.login') }}" class="call-modal"><span class="icon-user"></span></a>
               </div>
-  
+
               <button id="toggle-user-sidebar"><img src="{{ asset('images/resource/company-6.png') }}" alt="avatar" class="thumb"></button>
               <a href="#nav-mobile" class="mobile-nav-toggler navbar-trigger"><span class="flaticon-menu-1"></span></a>
             </div>
           </div>
-  
+
         </div>
-  
+
         <!-- Mobile Nav -->
         <div id="nav-mobile"></div>
       </header>
