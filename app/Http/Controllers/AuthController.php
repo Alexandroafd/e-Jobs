@@ -25,33 +25,49 @@ class AuthController extends Controller
 
     public function doregister(Request $request)
     {
-       $validation = Validator::make($request->all(), [
+       /*$validation = Validator::make($request->all(), [
             'name' => 'required|string|min:3',
             'email' => 'required|email|unique:users|max:150',
-            'password' => 'required|string|min:8'
-        ]); 
+            'password' => 'required|string|min:8',
+            'user_type' => 'required|in:candidat,employer'
+        ]);
 
         //$user = User::create($request->validated());
 
-        /*if ($validation->fails()) 
+        if ($validation->fails())
         {
             $errors = $validation->errors();
-            
+
             return response()->json([
                 'errors' => $errors,
                 'statut' => 401
             ]);
         } */
 
-        if ($validation->passes())
-        {
-            $user = User::create([
+        $validatedData = $request->validate([
+            'name' => 'required|string|min:3',
+            'email' => 'required|email|unique:users|max:150',
+            'password' => 'required|string|min:8',
+            'user_type' => 'required|in:candidat,employer'
+        ]);
+
+
+        /*if($validatedData->fails()){
+            return back()->withErrors($validatedData);
+        }*/
+
+            /*$user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,
-                'password' => Hash::make($request->password)
+                'password' => Hash::make($request->password),
+                'user_type' => $request->user_type
+            ]);*/
+            $user = User::create([
+                'name' => $validatedData['name'],
+                'email' => $validatedData['email'],
+                'password' => Hash::make($validatedData['password']),
+                'user_type' => $validatedData['user_type']
             ]);
-
-            //return to_route('auth.login')->with('success','Inscription réussie');
 
             $token = $user->createToken('auth_token')->plainTextToken;
             /*return response()-> json([
@@ -59,12 +75,13 @@ class AuthController extends Controller
                 'type' => 'Bearer'
             ])->cookie('jwt', $token); */
 
-            //$user->assignRole('admin');
+            if($user->user_type === 'candidat'){
+                return redirect()->route('auth.profile')->with('success','Inscription réussie');
+            } elseif($user->user_type === 'employer'){
+                return redirect()->route('auth.createJob')->with('success','Inscription réussie');
+            }
             return redirect()->route('auth.login', $request->$token)->with('success','Inscription réussie');
-        } else {
-            return back()->withErrors($validation);
-        }
-    } 
+    }
 
     public function login()
     {
@@ -73,7 +90,7 @@ class AuthController extends Controller
 
     public function dologin(Request $request)
     {
-        $validation = Validator::make($request->all(), [
+       /* $validation = Validator::make($request->all(), [
             'email' => 'required|email|string',
             'password' => 'required|min:8'
         ]);
@@ -84,8 +101,13 @@ class AuthController extends Controller
                 'email'=> $request->email,
                 'password'=> $request->password
             ])) {
-
-                return redirect()->route('auth.dashboard');
+                $user = Auth::user();
+                //dd($user);
+                if($user->user_type === 'candidat'){
+                    return redirect()->route('auth.profile');
+                } elseif($user->user_type === 'employer'){
+                    return redirect()->route('auth.createJob');
+                }
 
             } else {
 
@@ -96,7 +118,38 @@ class AuthController extends Controller
             return redirect()->route('auth.login')
             ->withErrors($validation)
             ->withInput($request->only('email'));
+        }*/
+
+        $validatedData = $request->validate([
+            'email' => 'required|email|string',
+            'password' => 'required|min:8'
+        ]);
+
+        // Authentification avec le paramètre "remember"
+        $remember = $request->has('remember'); // Vrai si la case est cochée
+
+        if (Auth::attempt([
+            'email' => $validatedData['email'],
+            'password' => $validatedData['password']
+        ], $remember)) {
+            $user = Auth::user();
+
+            if ($remember) {
+                // Enregistrer l'email dans un cookie pour une durée de 5 jours
+                cookie()->queue('email', $validatedData['email'], 60 * 24 * 5);
+            } else {
+                // Supprimer le cookie si "Se rappeler de moi" n'est pas coché
+                cookie()->forget('email');
+            }
+            
+            if ($user->user_type === 'candidat') {
+                return redirect()->route('auth.profile');
+            } elseif ($user->user_type === 'employer') {
+                return redirect()->route('auth.createJob');
+            }
         }
+
+        return redirect()->route('auth.login')->with('error', 'Identifiants incorrects');
     }
 
     public function dashboard ()
@@ -119,7 +172,7 @@ class AuthController extends Controller
 
     public function doprofile(Request $request)
     {
-        $id = Auth::user()->id; 
+        $id = Auth::user()->id;
 
         $validation = Validator::make($request->all(), [
             'name' => 'required|min:4|max:20',
@@ -157,14 +210,14 @@ class AuthController extends Controller
             //$user ->twitter = $request->twitter;
             //$user ->linkedin = $request->linkedin;
             //$user ->intragram = $request->instagram;
-            
+
             $user->save();
 
             $image = $request->image;
             $ext = $image->getClientOriginalExtension();
             $imageName = $id.'-'.time().'-'.$ext;
             $image->move(public_path('/profil_pic'), $imageName);
-    
+
             User::where('id', $id)->update(['image' => $imageName]);
 
             return redirect()->route('auth.profile')->with('success', 'Profil ajouté');
@@ -238,7 +291,7 @@ class AuthController extends Controller
 
         if (Hash::check($request->old_password, Auth::user()->password) == false)
         {
-           session()->flash('error', 'Lancien mot de passe est incorret'); 
+           session()->flash('error', 'Lancien mot de passe est incorret');
            return back()->with('error', 'Lancien mot de passe est incorret');
         }
 
@@ -271,7 +324,7 @@ class AuthController extends Controller
 
         if (Hash::check($request->old_password, Auth::user()->password) == false)
         {
-           session()->flash('error', 'Lancien mot de passe est incorret'); 
+           session()->flash('error', 'Lancien mot de passe est incorret');
            return back()->with('error', 'Lancien mot de passe est incorret');
         }
 
@@ -451,9 +504,9 @@ class AuthController extends Controller
         $job = Job::where([
             'user_id' => Auth::user()->id,
             'id' => $request->jobId
-        ])->first(); 
+        ])->first();
 
-        if ($job == null ) {  
+        if ($job == null ) {
         session()->flash('error', 'Déjà supprimé ou pas trouvé');
        /* return response()->json([
             'status' => true,
@@ -513,8 +566,8 @@ class AuthController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'email' => 'required|email|exists:users,email'
-        ]); 
-        
+        ]);
+
         if ($validation->fails())
         {
             return redirect()->route('auth.forgotPassword')->withInput()->withErrors($validation);
@@ -531,6 +584,7 @@ class AuthController extends Controller
         ]);
 
         $user = User::where('email', $request->email)->first();
+
         $mailData = [
             'token' => $token,
             'user' => $user,
@@ -540,7 +594,7 @@ class AuthController extends Controller
         //Envoyer l'email
         Mail::to($request->email)->send(new ResetPasswordEmail($mailData));
 
-        return redirect()->route('auth.forgotPassword')->with('success', 'Un email vous a étét envoyé, veuillez vérifier vos emails.');
+        return redirect()->route('auth.forgotPassword')->with('success', 'Un email vous a été envoyé, veuillez vérifier vos emails.');
     }
 
     public function resetPassword($tokenString)
@@ -570,8 +624,8 @@ class AuthController extends Controller
             'new_password' => 'required|min:8',
             'confirm_password' => 'required|same:new_password'
 
-        ]); 
-        
+        ]);
+
         if ($validation->fails())
         {
             return redirect()->route('auth.resetPassword', $request->token)->withErrors($validation);

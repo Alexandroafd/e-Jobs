@@ -38,7 +38,7 @@
             </div>
 
             <!-- <div class="outer-box">
-                 Login/Register 
+                 Login/Register
                 <div class="btn-box">
                 <a href="login-popup.html" class="theme-btn btn-style-three call-modal">Login / Register</a>
                 <a href="dashboard-post-job.html" class="theme-btn btn-style-one"><span class="btn-title">Job Post</span></a>
@@ -77,12 +77,28 @@
             <!-- Login Form -->
             <div class="login-form default-form">
             <div class="form-inner">
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <h3>Créer un compte gratuitement</h3>
 
                 <!--Login Form-->
                 <form method="post" action="{{ route('auth.doregister') }}">
                 @csrf
-                <div class="form-group">
+                {{--<div class="form-group">
                     <div class="btn-box row">
                     <div class="col-lg-6 col-md-12">
                         <a href=" {{ route('auth.dashboard') }} " class="theme-btn btn-style-seven"><i class="la la-user"></i> Candidat </a>
@@ -91,7 +107,7 @@
                         <a href="{{ route('auth.createJob') }}" class="theme-btn btn-style-four"><i class="la la-briefcase"></i> Employeur </a>
                     </div>
                     </div>
-                </div> 
+                </div>--}}
 
                 <div class="form-group">
                     <label>Nom</label>
@@ -116,6 +132,18 @@
                     <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                     @enderror
                 </div>
+
+                <div class="btn-box row">
+                    <div class="col-lg-6 col-md-12">
+                        <input type="radio" id="candidat" name="user_type" value="candidat" required>
+                        <label for="candidat"> Candidat </label>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <input type="radio" id="employer" name="user_type" value="employer" required>
+                        <label for="employer"> Employer </label>
+                    </div>
+                </div>
+
 
                 <div class="form-group">
                     <button class="theme-btn btn-style-one" type="submit" name="Register">Inscription</button>

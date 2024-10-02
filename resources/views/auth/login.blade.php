@@ -24,7 +24,7 @@
 
         <!-- Preloader -->
         <div class="preloader"></div>
-    
+
         <!-- Main Header-->
         <header class="main-header">
           <div class="container-fluid">
@@ -36,9 +36,9 @@
                   <div class="logo"><a href="{{ route('home') }}"><img src="{{ asset('images/logo-2.svg') }}" alt="" title=""></a></div>
                 </div>
               </div>
-    
+
              <!-- <div class="outer-box">
-                 Login/Register 
+                 Login/Register
                 <div class="btn-box">
                   <a href="login-popup.html" class="theme-btn btn-style-three call-modal">Login / Register</a>
                   <a href="dashboard-post-job.html" class="theme-btn btn-style-one"><span class="btn-title">Job Post</span></a>
@@ -46,17 +46,17 @@
               </div>
             </div>-->
           </div>
-    
+
           <!-- Mobile Header -->
           <div class="mobile-header">
             <div class="logo"><a href="{{ route('home') }}"><img src="{{ asset('images/logo.svg') }}" alt="" title=""></a></div>
           </div>
-    
+
           <!-- Mobile Nav -->
           <div id="nav-mobile"></div>
         </header>
         <!--End Main Header -->
-    
+
         <!-- Info Section -->
         <div class="login-section">
           <div class="image-layer" style="background-image: url({{ asset('images/background/12.jpg') }});"></div>
@@ -77,19 +77,19 @@
                     </div>
                 @endif
 
-                <h3>Connexion à Superio</h3>
+                <h3>Connectez-vous à votre compte !!</h3>
                 <!--Login Form-->
                 <form method="post" action="{{ route('auth.dologin') }}">
                     @method('post')
                     @csrf
                   <div class="form-group">
                     <label>Email</label>
-                    <input value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" type="email" name="email" placeholder="Email">
+                    <input value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" type="email" name="email" placeholder="Email" value="{{ old('email', request()->cookie('email')) }}">
                     @error('email')
                         <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                     @enderror
                   </div>
-    
+
                   <div class="form-group">
                     <label>Mot de passe</label>
                     <input class="form-control @error('password') is-invalid @enderror" id="password-field" type="password" name="password" value="" placeholder="Mot de passe">
@@ -97,7 +97,7 @@
                     <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                     @enderror
                   </div>
-    
+
                   <div class="form-group">
                     <div class="field-outer">
                       <div class="input-group checkboxes square">
@@ -107,12 +107,12 @@
                       <a href="{{ route('auth.forgotPassword') }}" class="pwd"> Mot de passe oublié? </a>
                     </div>
                   </div>
-    
+
                   <div class="form-group">
                     <button class="theme-btn btn-style-one" type="submit" name="log-in">Connexion</button>
                   </div>
                 </form>
-    
+
                 <div class="bottom-box">
                   <div class="text">Vous n'avez pas de compte? <a href="{{ route('auth.register') }}">   Inscription</a></div>
                   <!--<div class="divider"><span>or</span></div>
@@ -131,10 +131,10 @@
           </div>
         </div>
         <!-- End Info Section -->
-    
-    
+
+
     </div><!-- End Page Wrapper -->
-    
+
 
     <script src="{{ asset('js/jquery.js') }}"></script>
         <script src="{{ asset('js/popper.min.js') }}"></script>

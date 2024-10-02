@@ -22,7 +22,7 @@ class HomeController extends Controller
 
         $featuredjobs = Job::where('status', 1)->orderBy('created_at','DESC')->with('jobType')->where('isFeatured', 1)->take(6)->get();        //Afficher les offres d'emplois
 
-        //$latestjobs = Job::where('status',1)->orderBy('created_at','DESC')->with('jobType')->take(6)->get();                                //Afficher les dernières offres
+        //$latestjobs = Job::where('status', 1)->orderBy('created_at','DESC')->with('jobType')->take(6)->get();                                //Afficher les dernières offres
 
         return view ('home', [
             'categories' => $categories,
@@ -152,7 +152,7 @@ class HomeController extends Controller
         //dd($app);
 
 
-      /*  $employer = User::where('id', $employer_id)->first();                                            //Envoyer un email à l'employeur
+        $employer = User::where('id', $employer_id)->first();                                            //Envoyer un email à l'employeur
 
         $mailData = [
             'employer' => $employer,
@@ -160,7 +160,7 @@ class HomeController extends Controller
             'job' => $job
         ];
 
-        Mail::to($employer->email)->send(new JobNotificationEmail($mailData));*/
+        Mail::to($employer->email)->send(new JobNotificationEmail($mailData));
 
             session()->flash('success', 'Vous avez postulé pour cet emploi !');
             //return redirect()->route('jobDetail');
