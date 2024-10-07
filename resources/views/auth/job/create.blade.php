@@ -20,7 +20,7 @@
               <div class="skills-percentage">
                 <h4>Pourcentage de compétences</h4>
                 <p>Valeur de mise pour le champ d'image de couverture pour augmenter votre compétence jusqu'à "85%"</p>
-      
+
                 <!-- Pie Graph -->
                 <div class="pie-graph">
                   <div class="graph-outer">
@@ -29,18 +29,18 @@
                   </div>
                 </div>
               </div>
-            </div> 
-        </div> 
+            </div>
+        </div>
           <!-- End User Sidebar -->
-      
+
           <!-- Dashboard -->
           <section class="user-dashboard">
             <div class="dashboard-outer">
-              <div class="upper-title-box">
-                <h3>Poster un nouvel emploi!</h3>
-                <div class="text">Bienvenu !!</div>
-              </div>
-      
+                <div class="upper-title-box">
+                    <h3>Poster un nouvel emploi!</h3>
+                    <div class="text"> Heyy {{ Auth::user()->name }} !</div>
+                </div>
+
               <div class="row">
                 <div class="col-lg-12">
                   <!-- Ls widget -->
@@ -49,37 +49,37 @@
                       <div class="widget-title">
                         <h4>Poster un emploi</h4>
                       </div>
-      
+
                       <div class="widget-content">
-      
+
                         <div class="post-job-steps">
                           <div class="step">
                             <span class="icon flaticon-briefcase"></span>
                             <h5>Détails de l'emploi</h5>
                           </div>
-      
+
                           <div class="step">
                             <span class="icon flaticon-money"></span>
                             <h5>Package & Paiement</h5>
                           </div>
-      
+
                           <div class="step">
                             <span class="icon flaticon-checked"></span>
                             <h5>Confirmation</h5>
                           </div>
                         </div>
-      
+
                         @if (Session::has('success'))
                             <div class="alert alert-success">
                                 <p class="mb-0 pb-0"> {{ Session::get('success') }} </p>
                             </div>
-                        @endif 
-    
+                        @endif
+
                         @if (Session::has('error'))
                             <div class="alert alert-danger">
                                 <p class="mb-0 pb-0"> {{ Session::get('error') }} </p>
                             </div>
-                        @endif 
+                        @endif
 
                         <form class="default-form" method="post" action="{{ route('auth.saveJob') }}">
                             @csrf
@@ -92,7 +92,7 @@
                                 <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                               @enderror
                             </div>
-      
+
                             <!-- About Company -->
                             <div class="form-group col-lg-12 col-md-12">
                               <label>Description</label>
@@ -110,8 +110,8 @@
                                   <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                                 @enderror
                             </div>
-      
-      
+
+
                             <!-- Input -->
                             <div class="form-group col-lg-6 col-md-12">
                               <label>Addresse Email de l'entreprise</label>
@@ -120,7 +120,7 @@
                                 <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                               @enderror
                             </div>
-      
+
                             <!-- Input -->
                             <div class="form-group col-lg-6 col-md-12">
                               <label>Nom de l'entreprise</label>
@@ -129,30 +129,30 @@
                                 <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                               @enderror
                             </div>
-      
+
                             <!-- Search Select -->
                             <div class="form-group col-lg-6 col-md-12">
                               <label>Catégorie </label>
                               <select name="category" id="category" data-placeholder="Categories" class="chosen-select multiple" multiple tabindex="4">
                                 @if ($categories->isNotEmpty())
                                     @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>  
-                                    @endforeach  
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
                                 @endif
                               </select>
                             </div>
-      
+
                             <div class="form-group col-lg-6 col-md-12">
                               <label>Type d'emploi</label>
                               <select name="job_type" id="job_type" data-placeholder="JobType" class="chosen-select">
                                 @if ($jobTypes->isNotEmpty())
                                     @foreach ($jobTypes as $jobType)
-                                    <option value="{{ $jobType->id }}">{{ $jobType->name }}</option>  
-                                    @endforeach  
+                                    <option value="{{ $jobType->id }}">{{ $jobType->name }}</option>
+                                    @endforeach
                                  @endif
                               </select>
                             </div>
-      
+
                             <!-- Input -->
                             <div class="form-group col-lg-6 col-md-12">
                               <label>Salaire</label>
@@ -168,9 +168,9 @@
                                 <option>$2500</option>
                                 <option>$3500</option>
                                 <option>$4500</option>
-                                <option>$5000</option> 
+                                <option>$5000</option>
                               </select> -->
-      
+
                            <!-- <div class="form-group col-lg-6 col-md-12">
                               <label>Career Level</label>
                               <select class="chosen-select">
@@ -182,7 +182,7 @@
                                 <option>Management</option>
                               </select>
                             </div> -->
-      
+
                             <div class="form-group col-lg-6 col-md-12">
                               <label>Experience</label>
                               <select name="experience" id="experience" class="chosen-select">
@@ -197,9 +197,9 @@
                                 <option>9 ans</option>
                                 <option>10 ans</option>
                                 <option>+10 ans</option>
-                              </select> 
+                              </select>
                             </div>
-      
+
                             <div class="form-group col-lg-6 col-md-12">
                               <label>Genre</label>
                               <select name="genre" id="genre" class="chosen-select">
@@ -217,7 +217,7 @@
                                     <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                                 @enderror
                             </div>
-      
+
                             <!-- <div class="form-group col-lg-6 col-md-12">
                               <label>Industry</label>
                               <select class="chosen-select">
@@ -229,7 +229,7 @@
                                 <option>Management</option>
                               </select>
                             </div> -->
-      
+
                            <!-- <div class="form-group col-lg-6 col-md-12">
                               <label>Qualification</label>
                               <select class="chosen-select">
@@ -241,7 +241,7 @@
                                 <option>Management</option>
                               </select>
                             </div> -->
-      
+
                             <!-- Input -->
                             <div class="form-group col-lg-12 col-md-12">
                               <label>Date limite</label>
@@ -266,7 +266,7 @@
                                 <option>India</option>
                               </select> -->
                             </div>
-      
+
                             <!-- Input -->
                             <div class="form-group col-lg-6 col-md-12">
                               <label>Ville</label>
@@ -282,7 +282,7 @@
                                 <option>India</option>
                               </select> -->
                             </div>
-      
+
                             <!-- Input -->
                             <div class="form-group col-lg-12 col-md-12">
                               <label>Addresse Complete de l'entreprise</label>
@@ -291,7 +291,7 @@
                                 <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                               @enderror
                             </div>
-      
+
                             <!-- Input -->
                             <div class="form-group col-lg-12 col-md-12">
                               <label>Localisation</label>
@@ -300,32 +300,32 @@
                                     <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                                @enderror
                             </div>
-      
-                            <!-- Input 
+
+                            <!-- Input
                             <div class="form-group col-lg-3 col-md-12">
                               <label>Latitude</label>
                               <input type="text" name="name" placeholder="Melbourne">
                             </div>
-      
-                             Input 
+
+                             Input
                             <div class="form-group col-lg-3 col-md-12">
                               <label>Longitude</label>
                               <input type="text" name="name" placeholder="Melbourne">
                             </div> -->
-      
+
                             <!-- Input -->
-                            <div class="form-group col-lg-12 col-md-12">
+                            {{--<div class="form-group col-lg-12 col-md-12">
                               <button class="theme-btn btn-style-three">Chercher la Localisation</button>
                             </div>
-      
-      
+
+
                             <div class="form-group col-lg-12 col-md-12">
                               <div class="map-outer">
                                 <div class="map-canvas map-height" data-zoom="12" data-lat="-37.817085" data-lng="144.955631" data-type="roadmap" data-hue="#ffc400" data-title="Envato" data-icon-path="images/resource/map-marker.png" data-content="Melbourne VIC 3000, Australia<br><a href='mailto:info@youremail.com'>info@youremail.com</a>">
                                 </div>
                               </div>
-                            </div>
-      
+                            </div>--}}
+
                             <!-- Input -->
                             <div class="form-group col-lg-12 col-md-12 text-right">
                               <button class="theme-btn btn-style-one">Poster l'emploi</button>
@@ -336,8 +336,8 @@
                     </div>
                   </div>
                 </div>
-      
-      
+
+
               </div>
             </div>
           </section>

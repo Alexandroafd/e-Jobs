@@ -3,7 +3,7 @@
 @section('title', 'Accueil')
 
 @section('content')
-    
+
         <!-- Banner Section-->
         <section class="banner-section">
           <div class="auto-container">
@@ -14,7 +14,7 @@
                     <h3>Plus de <span class="colored">50,000</span> emplois postés<br> pour vous.</h3>
                     <div class="text">Trouver l'emploi qui vous convient et démarrer votre carrière professionnelle.</div>
                   </div>
-    
+
                   <!-- Job Search Form -->
                   <div class="job-search-form">
                     <form method="get" action="{{ route('liste.find') }}">
@@ -36,7 +36,7 @@
                     </form>
                   </div>
                   <!-- Job Search Form -->
-    
+
                   <!-- Popular Search -->
                   <div class="popular-searches">
                     <span class="title">Recherches Populaires : </span>
@@ -51,32 +51,32 @@
                   <!-- End Popular Search -->
                 </div>
               </div>
-    
+
               <div class="image-column col-lg-5 col-md-12">
                 <div class="image-box">
                   <figure class="main-image wow fadeIn" data-wow-delay="500ms"><img src="{{ asset('images/resource/banner-img-1.png') }}" alt=""></figure>
-    
-                  
+
+
                   <div class="info_block anm wow fadeIn" data-wow-delay="1000ms" data-speed-x="2" data-speed-y="2">
                     <span class="icon flaticon-email-3"></span>
                     <p>Work Inquiry From <br>Ali Tufan</p>
                   </div>
-    
-    
+
+
                   <div class="info_block_two anm wow fadeIn" data-wow-delay="2000ms" data-speed-x="1" data-speed-y="1">
                     <p>10k+ Candidates</p>
                     <div class="image"><img src="images/resource/multi-peoples.png" alt=""></div>
                   </div>
-    
-    
+
+
                   <div class="info_block_three anm wow fadeIn" data-wow-delay="1500ms" data-speed-x="4" data-speed-y="4">
                     <span class="icon flaticon-briefcase"></span>
                     <p>Creative Agency</p>
                     <span class="sub-text">Startup</span>
                     <span class="right_icon fa fa-check"></span>
                   </div>
-    
-    
+
+
                   <div class="info_block_four anm wow fadeIn" data-wow-delay="2500ms" data-speed-x="3" data-speed-y="3">
                     <span class="icon flaticon-file"></span>
                     <div class="inner">
@@ -84,21 +84,21 @@
                       <span class="sub-text">It only takes a few seconds</span>
                     </div>
                   </div>
-                
+
                 </div>
               </div>
             </div>
           </div>
         </section>
         <!-- End Banner Section-->
-    
+
         <!-- Job Categories -->
         <section class="job-categories">
           <div class="auto-container">
             <div class="sec-title text-center">
               <h2>Catégories</h2>
             </div>
-    
+
             <div class="row wow fadeInUp">
 
                 @if ($categories->isNotEmpty())
@@ -107,7 +107,7 @@
                     <div class="category-block col-lg-4 col-md-6 col-sm-12">
                         <div class="inner-box">
                         <div class="content">
-                            <span class="icon flaticon-money-1"></span>
+                            {{--<span class="icon flaticon-money-1"></span>--}}
                             <h4><a href="{{ route('liste.find').'?category='.$category->id }}"> {{ $category->name }} </a></h4>
                             <!--<p> Postulant(s)</p> -->
                         </div>
@@ -115,12 +115,12 @@
                     </div>
                     @endforeach
                 @endif
-    
+
             </div>
           </div>
         </section>
         <!-- End Job Categories -->
-    
+
         <!-- Job Section -->
         <section class="job-section">
           <div class="auto-container">
@@ -128,7 +128,7 @@
               <h2>Offres d'emploi</h2>
               <div class="text">Trouvez l'emploi qui vous convient</div>
             </div>
-    
+
             <div class="row wow fadeInUp">
 
                 @if ($featuredjobs->isNotEmpty())
@@ -137,7 +137,7 @@
                         <div class="job-block col-lg-6 col-md-12 col-sm-12">
                             <div class="inner-box">
                             <div class="content">
-                                <span class="company-logo"><img src="{{ asset('images/resource/company-logo/1-1.png') }}" alt=""></span>
+                                <span class="company-logo"><img src="{{--asset('images/resource/company-logo/1-1.png')--}}" alt=""></span>
                                 <h4><a href="{{ route('jobDetail', $featuredjob->id) }}"> {{ $featuredjob->title }} </a></h4>
                                 <ul class="job-info">
                                 <li><span class="icon flaticon-briefcase"></span> {{ $featuredjob->company_name }} </li>
@@ -157,28 +157,28 @@
                     @endforeach
                 @endif
             </div>
-    
+
           <!--  <div class="btn-box">
               <a href="#" class="theme-btn btn-style-one bg-blue"><span class="btn-title">Voir plus</span></a>
             </div> -->
           </div>
         </section>
         <!-- End Job Section -->
-    
+
         <!-- Testimonial Section -->
         <section class="testimonial-section">
           <div class="container-fluid">
             <!-- Sec Title -->
             <div class="sec-title text-center">
-              <h2>Témoignages de nos clients</h2>
+              <h2>Témoignages de nos utilisateurs</h2>
               <div class="text">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor</div>
             </div>
-    
+
             <div class="carousel-outer wow fadeInUp">
-    
+
               <!-- Testimonial Carousel -->
               <div class="testimonial-carousel owl-carousel owl-theme">
-    
+
                 <!--Testimonial Block -->
                 <div class="testimonial-block">
                   <div class="inner-box">
@@ -191,7 +191,7 @@
                     </div>
                   </div>
                 </div>
-    
+
                 <!--Testimonial Block -->
                 <div class="testimonial-block">
                   <div class="inner-box">
@@ -204,7 +204,7 @@
                     </div>
                   </div>
                 </div>
-    
+
                 <!--Testimonial Block -->
                 <div class="testimonial-block">
                   <div class="inner-box">
@@ -222,7 +222,7 @@
           </div>
         </section>
         <!-- End Testimonial Section -->
-    
+
         <!--Clients Section-->
         <section class="clients-section">
           <div class="sponsors-outer wow fadeInUp">
@@ -253,7 +253,7 @@
           </div>
         </section>
         <!-- End Clients Section-->
-    
+
         <!-- About Section -->
         <section class="about-section">
           <div class="auto-container">
@@ -273,11 +273,11 @@
                   <a href="{{ route('liste.find') }}" class="theme-btn btn-style-one bg-blue"><span class="btn-title">Démarrer</span></a>
                 </div>
               </div>
-    
+
               <!-- Image Column -->
               <div class="image-column col-lg-6 col-md-12 col-sm-12">
                 <figure class="image wow fadeInLeft"><img src="images/resource/image-2.jpg" alt=""></figure>
-    
+
                 <!-- Count Employers -->
                 <div class="count-employers wow fadeInUp">
                   <div class="check-box"><span class="flaticon-tick"></span></div>
@@ -286,8 +286,8 @@
                 </div>
               </div>
             </div>
-    
-    
+
+
             <!-- Fun Fact Section -->
             <div class="fun-fact-section">
               <div class="row">
@@ -296,13 +296,13 @@
                   <div class="count-box"><span class="count-text" data-speed="3000" data-stop="4">0</span>M</div>
                   <h4 class="counter-title">4 millions d'utilisateurs</h4>
                 </div>
-    
+
                 <!--Column-->
                 <div class="counter-column col-lg-4 col-md-4 col-sm-12 wow fadeInUp" data-wow-delay="400ms">
                   <div class="count-box"><span class="count-text" data-speed="3000" data-stop="12">0</span>k</div>
                   <h4 class="counter-title">Plus de 12k d'offres d'emplois</h4>
                 </div>
-    
+
                 <!--Column-->
                 <div class="counter-column col-lg-4 col-md-4 col-sm-12 wow fadeInUp" data-wow-delay="800ms">
                   <div class="count-box"><span class="count-text" data-speed="3000" data-stop="20">0</span>M</div>
@@ -314,17 +314,17 @@
           </div>
         </section>
         <!-- End About Section -->
-    
+
         <!-- News Section -->
-         <section class="news-section">
+        <!--<section class="news-section">
           <div class="auto-container">
             <div class="sec-title text-center">
               <h2>Recent News Articles</h2>
               <div class="text">Fresh job related news content posted each day.</div>
             </div>
-    
+
             <div class="row wow fadeInUp">
-               
+
               <div class="news-block col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box">
                   <div class="image-box">
@@ -337,12 +337,12 @@
                     </ul>
                     <h3><a href="blog-single.html">Attract Sales And Profits</a></h3>
                     <p class="text">A job ravenously while Far much that one rank beheld after outside....</p>
-                    <a href="#" class="read-more">Lire plus <i class="fa fa-angle-right"></i></a>
+                    <a href="{{ route('blog') }}" class="read-more"> En savoir plus <i class="fa fa-angle-right"></i></a>
                   </div>
                 </div>
               </div>
-    
-               
+
+
               <div class="news-block col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box">
                   <div class="image-box">
@@ -355,12 +355,12 @@
                     </ul>
                     <h3><a href="blog-single.html">5 Tips For Your Job Interviews</a></h3>
                     <p class="text">A job ravenously while Far much that one rank beheld after outside....</p>
-                    <a href="#" class="read-more">Lire plus <i class="fa fa-angle-right"></i></a>
+                    <a href="{{ route('blog') }}" class="read-more"> En savoir plus <i class="fa fa-angle-right"></i></a>
                   </div>
                 </div>
               </div>
-    
-               
+
+
               <div class="news-block col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box">
                   <div class="image-box">
@@ -373,25 +373,25 @@
                     </ul>
                     <h3><a href="blog-single.html">An Overworked Newspaper Editor</a></h3>
                     <p class="text">A job ravenously while Far much that one rank beheld after outside....</p>
-                    <a href="#" class="read-more">Lire plus <i class="fa fa-angle-right"></i></a>
+                    <a href="{{ route('blog') }}" class="read-more"> En savoir plus <i class="fa fa-angle-right"></i></a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section> 
+        </section>-->
         <!-- End News Section -->
-    
+
         <!-- App Section -->
-         <section class="app-section">
+        <!--<section class="app-section">
           <div class="auto-container">
             <div class="row">
-               
+
               <div class="image-column col-lg-6 col-md-12 col-sm-12">
                 <div class="bg-shape"></div>
                 <figure class="image wow fadeInLeft"><img src="{{ asset('images/resource/mobile-app.png') }}" alt=""></figure>
               </div>
-    
+
               <div class="content-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column wow fadeInRight">
                   <div class="sec-title">
@@ -407,10 +407,10 @@
               </div>
             </div>
           </div>
-        </section>
-         
-    
-          
+        </section>-->
+
+
+
         <section class="call-to-action">
           <div class="auto-container">
             <div class="outer-box wow fadeInUp">
@@ -421,13 +421,13 @@
                   <a href="#" class="theme-btn btn-style-one bg-blue"><span class="btn-title">Start Recruiting Now</span></a>
                 </div>
               </div>
-    
+
               <div class="image-column" style="background-image: url({{ asset('images/resource/image-1.png') }});">
                 <figure class="image"><img src="{{ asset('images/resource/image-1.png') }}" alt=""></figure>
               </div>
             </div>
           </div>
-        </section> 
+        </section>
         <!-- End Call To Action -->
 
 @endsection

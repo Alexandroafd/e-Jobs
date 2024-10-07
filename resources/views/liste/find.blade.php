@@ -33,10 +33,10 @@
                   @if ($categories)
                     @foreach ($categories as $category)
                         <option {{ $category->id }} > {{ $category->name }} </option>
-                    @endforeach  
+                    @endforeach
                   @endif
                 </select>
-              </div> 
+              </div>
 
               <!-- Form Group -->
               <div class="form-group col-lg-2 col-md-12 col-sm-12 text-right">
@@ -142,7 +142,7 @@
                         <div class="job-block col-lg-6 col-md-12 col-sm-12">
                         <div class="inner-box">
                             <div class="content">
-                            <span class="company-logo"><img src="{{ asset('images/resource/company-logo/1-2.png') }}" alt=""></span>
+                            <span class="company-logo"><img src="" alt=""></span> {{--asset('images/resource/company-logo/1-2.png')--}}
                             <h4><a href="{{ route('jobDetail', $job->id) }}"> {{ $job->title }} </a></h4>
                             <ul class="job-info">
                                 <li><span class="icon flaticon-briefcase"></span> {{ $job->company_name }} </li>
@@ -161,10 +161,10 @@
                         </div>
                     @endforeach
                     <div>
-                        {{--{{ $jobs->withQueryString()->links() }}  --}}  
-                    </div>                    
+                        {{--{{ $jobs->withQueryString()->links() }}  --}}
+                    </div>
                 @else
-                <div class="job-block col-lg-6 col-md-12 col-sm-12"> Aucun résulat ne correspond à votre recherche !</div>      
+                <div class="job-block col-lg-6 col-md-12 col-sm-12"> Aucun résulat ne correspond à votre recherche !</div>
                 @endif
               </div>
               <div>

@@ -94,7 +94,7 @@
                       </div>-->
       
                       <!--Job Block -->
-                      <div class="job-block">
+                      <!--<div class="job-block">
                         <div class="inner-box">
                           <div class="content">
                             <span class="company-logo"><img src="{{ asset('images/resource/company-logo/1-3.png') }}" alt=""></span>
@@ -113,7 +113,7 @@
                             <button class="bookmark-btn"><span class="flaticon-bookmark"></span></button>
                           </div>
                         </div>
-                      </div>
+                      </div>-->
                     </div>
                   </div> 
       

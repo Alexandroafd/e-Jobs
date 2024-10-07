@@ -15,16 +15,38 @@ class RedirectIfAuthenticated
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next, string ...$guards): Response
+    /*public function handle(Request $request, Closure $next, string ...$guards): Response
     {
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
+            if (Auth::guard($guard)->check()->user->user_type == 'candidat') {
                 return redirect(route('auth.profile'));
+            }else if (Auth::guard($guard)->check()->user->user_type == 'employer') {
+                return redirect(route('auth.createJob'));
             }
         }
 
         return $next($request);
+    }*/
+
+    public function handle(Request $request, Closure $next, string ...$guards): Response
+{
+    $guards = empty($guards) ? [null] : $guards;
+
+    foreach ($guards as $guard) {
+        if (Auth::guard($guard)->check()) {
+            $user = Auth::guard($guard)->user();
+
+            if ($user->user_type == 'candidat') {
+                return redirect()->route('auth.profile');
+            } elseif ($user->user_type == 'employer') {
+                return redirect()->route('auth.createJob');
+            }
+        }
     }
+
+    return $next($request);
+}
+
 }
