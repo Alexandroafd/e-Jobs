@@ -17,7 +17,7 @@
                 <li><a href="{{ route('auth.logout') }}"><i class="la la-sign-out"></i>Déconnexion</a></li>
                 <li><a href="{{ route('auth.deleteProfile') }}"><i class="la la-trash"></i>Supprimer le Profil</a></li>
               </ul>
-              <div class="skills-percentage">
+              {{--<div class="skills-percentage">
                 <h4>Pourcentage de compétences</h4>
                 <p>Valeur de mise pour le champ d'image de couverture pour augmenter votre compétence jusqu'à "85%"</p>
 
@@ -28,7 +28,7 @@
                     <div class="inner-text count-box"><span class="count-text txt" data-stop="30" data-speed="2000"></span>%</div>
                   </div>
                 </div>
-              </div>
+              </div>--}}
             </div>
         </div>
           <!-- End User Sidebar -->
@@ -37,8 +37,8 @@
           <section class="user-dashboard">
             <div class="dashboard-outer">
                 <div class="upper-title-box">
-                    <h3>Poster un nouvel emploi!</h3>
-                    <div class="text"> Heyy {{ Auth::user()->name }} !</div>
+                    <h3> Heyy {{ Auth::user()->name }} !</h3>
+                    <div class="text">Bienvenu !!</div>
                 </div>
 
               <div class="row">
@@ -52,7 +52,7 @@
 
                       <div class="widget-content">
 
-                        <div class="post-job-steps">
+                        {{--<div class="post-job-steps">
                           <div class="step">
                             <span class="icon flaticon-briefcase"></span>
                             <h5>Détails de l'emploi</h5>
@@ -67,7 +67,7 @@
                             <span class="icon flaticon-checked"></span>
                             <h5>Confirmation</h5>
                           </div>
-                        </div>
+                        </div>--}}
 
                         @if (Session::has('success'))
                             <div class="alert alert-success">

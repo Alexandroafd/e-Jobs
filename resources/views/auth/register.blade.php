@@ -133,15 +133,16 @@
                     @enderror
                 </div>
 
-                <div class="btn-box row">
-                    <div class="col-lg-6 col-md-12">
-                        <input type="radio" id="candidat" name="user_type" value="candidat" required>
-                        <label for="candidat"> Candidat </label>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                        <input type="radio" id="employer" name="user_type" value="employer" required>
-                        <label for="employer"> Employeur </label>
-                    </div>
+                <div class="form-group">
+                    <label>S'inscrire en tant que :</label>
+					<select value="{{ old('user_type') }}" name="user_type" id="user_type" class="form-control @error('user_type') is-invalid @enderror">
+                        <option value="">&nbsp;</option>
+                        <option value="employer" {{ old('user_type') == 'employer' ? 'selected' : '' }}> Employeur </option>
+					    <option value="candidat" {{ old('user_type') == 'candidat' ? 'selected' : '' }}> Candidat </option>
+					</select>
+                    @error('user_type')
+                        <p class="invalid-feedback fw-bold"> {{ $message }} </p>
+                    @enderror
                 </div>
 
 

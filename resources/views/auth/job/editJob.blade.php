@@ -18,18 +18,6 @@
                     <li><a href="{{ route('auth.logout') }}"><i class="la la-sign-out"></i>Déconnexion</a></li>
                     <li><a href="{{ route('auth.deleteProfile') }}"><i class="la la-trash"></i>Supprimer le Profil</a></li>
                   </ul>
-                  <div class="skills-percentage">
-                    <h4>Pourcentage de compétences</h4>
-                    <p>Valeur de mise pour le champ d'image de couverture pour augmenter votre compétence jusqu'à "85%"</p>
-          
-                    <!-- Pie Graph -->
-                    <div class="pie-graph">
-                      <div class="graph-outer">
-                        <input type="text" class="dial" data-fgColor="#7367F0" data-bgColor="transparent" data-width="234" data-height="234" data-linecap="normal" value="30">
-                        <div class="inner-text count-box"><span class="count-text txt" data-stop="30" data-speed="2000"></span>%</div>
-                      </div>
-                    </div>
-                  </div>
             </div> 
         </div> 
           <!-- End User Sidebar -->

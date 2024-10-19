@@ -189,7 +189,7 @@
               <li><a href="employers-single-v2.html">Employers Single v2</a></li>
             </ul>
           </li> -->
-        <li class="dropdown">
+        {{--<li class="dropdown">
             <a href="{{ route('blog') }}" @class(['nav-link', 'active' => str_contains($route, 'blog')])>Blog</a>
         </li>
 
@@ -200,7 +200,7 @@
         <li class="dropdown">
             <a href="{{ route('pages.contact') }}" @class(['nav-link', 'active' => str_contains($route, 'pages.')])>Contact</a>
 
-        </li>
+        </li>--}}
 
       {{--<li class="dropdown">
         <a href="{{ route('liste.candidat') }}" @class(['nav-link', 'active' => str_contains($route, 'liste.')])>Candidats</a>
@@ -293,47 +293,47 @@
 
             <div class="outer-box">
 
-              <button class="menu-btn">
-                <span class="count">1</span>
+              <!--<button class="menu-btn">
+                <span class="count"></span>
                 <span class="icon la la-heart-o"></span>
               </button>
 
               <button class="menu-btn">
                 <span class="icon la la-bell"></span>
-              </button>
+              </button>-->
 
               <!-- Dashboard Option -->
                <div class="dropdown dashboard-option">
-                @if (!Auth::check())
-                    <a href="{{ route('auth.login') }}" class="theme-btn btn-style-three call-modal">Connexion</a>  <!--class="theme-btn btn-style-three call-modal"-->
-                @else
-                    @if (Auth::user()->role == 'admin')
-                        <a href="{{ route('admin.dashboard') }}" class="theme-btn btn-style-three call-modal">Admin</a>
-                    @else
-                        @if (Auth::user()->user_type == 'employer')
-                            <a href="{{ route('auth.createJob') }}" class="theme-btn btn-style-one">Poster un emploi</a>
-                        @endif
-                    @endif
-                @endif
-               <!-- <a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">
-                  <img src="images/resource/company-6.png" alt="avatar" class="thumb">
-                  <span class="name">My Account</span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a href="candidate-dashboard.html"> <i class="la la-home"></i> Dashboard</a></li>
-                  <li class="active"><a href="candidate-dashboard-profile.html"><i class="la la-user-tie"></i>My Profile</a></li>
-                  <li><a href="candidate-dashboard-resume.html"><i class="la la-file-invoice"></i>My Resume</a></li>
-                  <li><a href="candidate-dashboard-applied-job.html"><i class="la la-briefcase"></i> Applied Jobs </a></li>
-                  <li><a href="candidate-dashboard-job-alerts.html"><i class="la la-bell"></i>Job Alerts</a></li>
-                  <li><a href="candidate-dashboard-shortlisted-resume.html"><i class="la la-bookmark-o"></i>Shortlisted Jobs</a></li>
-                  <li><a href="candidate-dashboard-cv-manager.html"><i class="la la-file-invoice"></i> CV manager</a></li>
-                  <li><a href="dashboard-packages.html"><i class="la la-box"></i>Packages</a></li>
-                  <li><a href="dashboard-messages.html"><i class="la la-comment-o"></i>Messages</a></li>
-                  <li><a href="dashboard-change-password.html"><i class="la la-lock"></i>Change Password</a></li>
-                  <li><a href="dashboard-profile.html"><i class="la la-user-alt"></i>View Profile</a></li>
-                  <li><a href="index.html"><i class="la la-sign-out"></i>Logout</a></li>
-                  <li><a href="dashboard-delete.html"><i class="la la-trash"></i>Delete Profile</a></li>
-                </ul> -->
+                  @if (!Auth::check())
+                      <a href="{{ route('auth.login') }}" class="theme-btn btn-style-three call-modal">Connexion</a>  <!--class="theme-btn btn-style-three call-modal"-->
+                  @else
+                      @if (Auth::user()->role == 'admin')
+                          <a href="{{ route('admin.dashboard') }}" class="theme-btn btn-style-three call-modal">Admin</a>
+                      @else
+                          @if (Auth::user()->user_type == 'employer')
+                              <a href="{{ route('auth.createJob') }}" class="theme-btn btn-style-one">Poster un emploi</a>
+                          @endif
+                      @endif
+                  @endif
+                  <!--<a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">
+                    <img src="images/resource/company-6.png" alt="avatar" class="thumb">
+                    <span class="name">Mon Compte</span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="candidate-dashboard.html"> <i class="la la-home"></i> Dashboard</a></li>
+                    <li class="active"><a href="candidate-dashboard-profile.html"><i class="la la-user-tie"></i>My Profile</a></li>
+                    <li><a href="candidate-dashboard-resume.html"><i class="la la-file-invoice"></i>My Resume</a></li>
+                    <li><a href="candidate-dashboard-applied-job.html"><i class="la la-briefcase"></i> Applied Jobs </a></li>
+                    <li><a href="candidate-dashboard-job-alerts.html"><i class="la la-bell"></i>Job Alerts</a></li>
+                    <li><a href="candidate-dashboard-shortlisted-resume.html"><i class="la la-bookmark-o"></i>Shortlisted Jobs</a></li>
+                    <li><a href="candidate-dashboard-cv-manager.html"><i class="la la-file-invoice"></i> CV manager</a></li>
+                    <li><a href="dashboard-packages.html"><i class="la la-box"></i>Packages</a></li>
+                    <li><a href="dashboard-messages.html"><i class="la la-comment-o"></i>Messages</a></li>
+                    <li><a href="dashboard-change-password.html"><i class="la la-lock"></i>Change Password</a></li>
+                    <li><a href="dashboard-profile.html"><i class="la la-user-alt"></i>View Profile</a></li>
+                    <li><a href="index.html"><i class="la la-sign-out"></i>Logout</a></li>
+                    <li><a href="dashboard-delete.html"><i class="la la-trash"></i>Delete Profile</a></li>
+                  </ul> -->
               </div>
             </div>
           </div>
@@ -349,7 +349,9 @@
             <div class="outer-box">
               <!-- Login/Register -->
               <div class="login-box">
-                <a href="{{ route('auth.login') }}" class="call-modal"><span class="icon-user"></span></a>
+                @if(!Auth::check())
+                  <a href="{{ route('auth.login') }}" class="call-modal"><span class="icon-user"></span></a>
+                @endif
               </div>
 
               <button id="toggle-user-sidebar"><img src="{{ asset('images/resource/company-6.png') }}" alt="avatar" class="thumb"></button>

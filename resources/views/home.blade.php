@@ -316,7 +316,7 @@
         <!-- End About Section -->
 
         <!-- News Section -->
-        <!--<section class="news-section">
+        {{--<section class="news-section">
           <div class="auto-container">
             <div class="sec-title text-center">
               <h2>Recent News Articles</h2>
@@ -379,7 +379,7 @@
               </div>
             </div>
           </div>
-        </section>-->
+        </section>--}}
         <!-- End News Section -->
 
         <!-- App Section -->

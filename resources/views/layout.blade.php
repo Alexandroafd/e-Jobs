@@ -188,7 +188,7 @@
                           <li><a href="employers-single-v2.html">Employers Single v2</a></li> 
                         </ul>
                       </li> -->
-                    <li class="dropdown">
+                    {{--<li class="dropdown">
                         <a href="{{ route('blog') }}" @class(['nav-link', 'active' => str_contains($route, 'blog')])>Blog</a>
                     </li>
 
@@ -198,8 +198,7 @@
 
                     <li class="dropdown">
                         <a href="{{ route('pages.contact') }}" @class(['nav-link', 'active' => str_contains($route, 'pages.')])>Contact</a>
-
-                    </li>
+                    </li>--}}
 
                   {{--<li class="dropdown">
                     <a href="{{ route('liste.candidat') }}" @class(['nav-link', 'active' => str_contains($route, 'liste.')])>Candidats</a>
@@ -384,8 +383,6 @@
                           <div class="widget-content">
                             <ul class="list">
                               <li><a href="{{ route('liste.find') }}">Page d'emplois</a></li>
-                              <li><a href="{{ route('blog') }}">Blog</a></li>
-                              <li><a href="{{ route('pages.contact') }}">Contact</a></li>
                             </ul>
                           </div>
                         </div>
@@ -398,7 +395,6 @@
                           <div class="widget-content">
                             <ul class="list">
                               <li><a href="www.googlemap.com">Localisation</a></li>
-                              <li><a href="{{ route('pages.about') }}">A propos</a></li>
                              <!-- <li><a href="#">Securité</a></li>
                               <li><a href="#">Accessibilité</a></li>-->
                             </ul>

@@ -38,15 +38,15 @@ Route::get('/employers', [HomeController::class,'employer'])->name('liste.employ
 
 Route::get('/candidates', [HomeController::class,'candidat'])->name('liste.candidat');          //Route de la page liste des candidats
 
-Route::get('/blog', [BlogController::class,'blog'])->name('blog');                              //Route de la page de blog
+//Route::get('/blog', [BlogController::class,'blog'])->name('blog');                              //Route de la page de blog
 
-Route::get('/about', [AboutController::class,'about'])->name('pages.about');                    //Route de la page about
+//Route::get('/about', [AboutController::class,'about'])->name('pages.about');                    //Route de la page about
 
 Route::get('/faq', [AboutController::class,'faq'])->name('pages.faq');                          //Route de la page FaQ's
 
 Route::get('/element', [AboutController::class,'element'])->name('pages.element');              //Route de la page UI Element
 
-Route::get('/contact', [AboutController::class,'contact'])->name('pages.contact');              //Route de la page contact
+//Route::get('/contact', [AboutController::class,'contact'])->name('pages.contact');              //Route de la page contact
 
 Route::get('/forgotPassword', [AuthController::class,'forgotPassword'])->name('auth.forgotPassword'); //Routes de password oublié
 Route::post('/doforgotPassword', [AuthController::class,'doforgotPassword'])->name('auth.doforgotPassword'); 
@@ -96,20 +96,13 @@ Route::group(['auth'], function() {
         Route::post('/myprofile', [AuthController::class, 'doprofile'])->name('auth.doprofile');
         //Route::post('/updateProfile', [AuthController::class, 'updateProfile'])->name('auth.updateProfile'); //changer la photo de profile
 
-       //Route::get('/myresume', [AuthController::class, 'myresume'])->name('auth.myresume');         //Route de Résumé
        
        //Route::get('/jobsApplied', [AuthController::class, 'jobsApplied'])->name('auth.jobsApplied');//Route de jobs applied
 
-        //Route::get('/jobsAlert', [AuthController::class, 'jobsAlert'])->name('auth.jobsAlert');     //Route de jobs alerte
 
         Route::get('/jobslist', [AuthController::class, 'jobslist'])->name('auth.jobslist');        //Route pour voir les jobs sauvegardés
 
         Route::get('/removeSaveJob/{id}', [AuthController::class, 'removeSaveJob'])->name('auth.removeSaveJob'); //Route de suppression des jobs sauvegardés
-
-
-        //Route::get('/cv', [AuthController::class, 'cv'])->name('auth.cv');                          //Route de cv
-
-        //Route::get('/message', [AuthController::class, 'message'])->name('auth.message');           //Route de message
 
         Route::get('/changePassword', [AuthController::class, 'changePassword'])->name('auth.changePassword');//Route de changement de mot de passe
         Route::post('/updatePassword', [AuthController::class, 'updatePassword'])->name('auth.updatePassword');//Route de changement de mot de passe
