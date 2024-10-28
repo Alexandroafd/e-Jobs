@@ -115,9 +115,9 @@ class HomeController extends Controller
 
         if($job == null)   //job not found in BDD                                                   Vérifier si le job est dipo
         {
-            session()->flash('error', 'Lemploi nest pas disponible !');
+            session()->flash('error', 'L\'emploi n\'est pas disponible !');
             //return redirect()->route('jobDetail');
-            return back()->with('error', 'Lemploi nest pas disponible !');
+            return back()->with('error', 'L\'emploi n\'est pas disponible !');
         }
 
         $employer_id = $job->user_id;                                                                //Vérifier l'id de l'user connecté

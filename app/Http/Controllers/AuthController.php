@@ -351,7 +351,7 @@ class AuthController extends Controller
 
     public function createJob()
     {
-       $categories = Category::orderBy('name', 'ASC')->where('status', 1)->get();
+       $categories = Category::orderBy('name', 'ASC')->where('status', 1)->get(); 
 
        $jobTypes = jobType::orderBy('name', 'ASC')->where('status', 1)->get();
 
