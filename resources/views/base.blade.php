@@ -49,12 +49,12 @@
 
   <nav class="nav main-menu">
     <ul class="navigation" id="navbar">
-      <li class="">
-        <a href="{{ route('home') }}" @class(['nav-link', 'active' => str_contains($route, 'home')])>Accueil</a>
+      <li class="{{ $route === 'home' ? 'current' : '' }}">
+        <a href="{{ route('home') }}">Accueil</a>
       </li>
 
-      <li class="dropdown has-mega-menu" id="has-mega-menu">
-            <a href="{{ route('liste.find') }}" @class(['nav-link', 'active' => str_contains($route, 'liste.')])>Emplois</a>
+      <li class="dropdown has-mega-menu {{ str_contains($route, 'liste') ? 'current' : '' }}" id="has-mega-menu">
+        <a href="{{ route('liste.find') }}">Emplois</a>
       </li>
 
       <!-- Only for Mobile View -->

@@ -43,62 +43,19 @@
               <div class="logo-box">
                 <div class="logo"><a href="{{ route('home') }}"><img src="{{ asset('images/logo.svg') }}" alt="" title=""></a></div>
               </div>
+
               @php
-                $route = request()->route()->getName();
-             @endphp
+                  $route = request()->route()->getName();
+              @endphp
+
               <nav class="nav main-menu">
                 <ul class="navigation" id="navbar">
-                  <li class="">
-                    <a href="{{ route('home') }}" @class(['nav-link', 'active' => str_contains($route, 'home')])>Accueil</a>
-                    <!-- <div class="mega-menu">
-                      <div class="mega-menu-bar row pt-0">
-                        <div class="column col-lg-3 col-md-3 col-sm-12">
-                          <ul>
-                            <li class="current"><a href="index.html">Home Page 01</a></li>
-                            <li><a href="index-2.html">Home Page 02</a></li>
-                            <li><a href="index-3.html">Home Page 03</a></li>
-                            <li><a href="index-4.html">Home Page 04</a></li>
-                            <li><a href="index-5.html">Home Page 05</a></li>
-                          </ul>
-                        </div>
-
-                        <div class="column col-lg-3 col-md-3 col-sm-12">
-                          <ul>
-                            <li><a href="index-6.html">Home Page 06</a></li>
-                            <li><a href="index-7.html">Home Page 07</a></li>
-                            <li><a href="index-8.html">Home Page 08</a></li>
-                            <li><a href="index-9.html">Home Page 09</a></li>
-                            <li><a href="index-10.html">Home Page 10</a></li>
-                          </ul>
-                        </div>
-
-                        <div class="column col-lg-3 col-md-3 col-sm-12">
-                          <ul>
-                            <li><a href="index-11.html">Home Page 11</a></li>
-                            <li><a href="index-12.html">Home Page 12</a></li>
-                            <li><a href="index-13.html">Home Page 13</a></li>
-                            <li><a href="index-14.html">Home Page 14</a></li>
-                            <li><a href="index-15.html">Home Page 15</a></li>
-                          </ul>
-                        </div>
-
-                        <div class="column col-lg-3 col-md-3 col-sm-12">
-                          <ul>
-                            <li><a href="index-16.html">Home Page 16</a></li>
-                            <li><a href="index-17.html">Home Page 17</a></li>
-                            <li><a href="index-18.html">Home Page 18</a></li>
-                            <li><a href="index-19.html">Home Page 19</a></li>
-                            <li><a href="index-20.html">Home Page 20</a></li>
-                            <li><a href="index-21.html">Home Page 21</a></li>
-                            <li><a href="index-22.html">Home Page 22</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div> -->
+                  <li class="{{ $route === 'home' ? 'current' : '' }}">
+                    <a href="{{ route('home') }}">Accueil</a>
                   </li>
 
-                  <li class="dropdown has-mega-menu" id="has-mega-menu">
-                        <a href="{{ route('liste.find') }}" @class(['nav-link', 'active' => str_contains($route, 'liste.')])>Emplois</a>
+                  <li class="dropdown has-mega-menu {{ str_contains($route, 'liste') ? 'current' : '' }}" id="has-mega-menu">
+                        <a href="{{ route('liste.find') }}">Emplois</a>
                   </li>
 
                   <!-- Only for Mobile View -->
