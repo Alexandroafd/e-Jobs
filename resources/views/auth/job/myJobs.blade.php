@@ -54,14 +54,6 @@
                       <h4>Liste des emplois</h4>
     
                       <div class="chosen-outer">
-                        <!--Tabs Box-->
-                        <!-- <select class="chosen-select">
-                          <option>Last 6 Months</option>
-                          <option>Last 12 Months</option>
-                          <option>Last 16 Months</option>
-                          <option>Last 24 Months</option>
-                          <option>Last 5 year</option>
-                        </select> -->
                       </div>
                     </div>
     
@@ -100,7 +92,7 @@
                                         <ul class="option-list">
                                           <li><button><a href="{{ route('auth.createJob', $job->id) }}" data-text="Afficher"><span class="la la-eye"></span></a></button></li>
                                           <li><button><a href="{{ route('auth.editJob', $job->id) }}" data-text="Editer"><span class="la la-pencil"></span></a></button></li>
-                                          <li><button><a href="{{ route('auth.deleteJob', $job->id) }}" onclick="deletejob( {{ $job->id }} )" data-text="Supprimer"><span class="la la-trash"></span></a></button></li>
+                                          <li><button><a href="{{ route('auth.deleteJob', $job->id) }}" onclick="return confirm('Voulez-vous vraiment supprimer ce job ?')" data-text="Supprimer"><span class="la la-trash"></span></a></button></li>
                                         </ul>
                                       </div>
                                     </td>

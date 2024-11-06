@@ -17,18 +17,6 @@
                 <li><a href="{{ route('auth.logout') }}"><i class="la la-sign-out"></i>Déconnexion</a></li>
                 <li><a href="{{ route('auth.deleteProfile') }}"><i class="la la-trash"></i>Supprimer le Profil</a></li>
               </ul>
-              {{--<div class="skills-percentage">
-                <h4>Pourcentage de compétences</h4>
-                <p>Valeur de mise pour le champ d'image de couverture pour augmenter votre compétence jusqu'à "85%"</p>
-
-                <!-- Pie Graph -->
-                <div class="pie-graph">
-                  <div class="graph-outer">
-                    <input type="text" class="dial" data-fgColor="#7367F0" data-bgColor="transparent" data-width="234" data-height="234" data-linecap="normal" value="30">
-                    <div class="inner-text count-box"><span class="count-text txt" data-stop="30" data-speed="2000"></span>%</div>
-                  </div>
-                </div>
-              </div>--}}
             </div>
         </div>
           <!-- End User Sidebar -->
@@ -51,23 +39,6 @@
                       </div>
 
                       <div class="widget-content">
-
-                        {{--<div class="post-job-steps">
-                          <div class="step">
-                            <span class="icon flaticon-briefcase"></span>
-                            <h5>Détails de l'emploi</h5>
-                          </div>
-
-                          <div class="step">
-                            <span class="icon flaticon-money"></span>
-                            <h5>Package & Paiement</h5>
-                          </div>
-
-                          <div class="step">
-                            <span class="icon flaticon-checked"></span>
-                            <h5>Confirmation</h5>
-                          </div>
-                        </div>--}}
 
                         @if (Session::has('success'))
                             <div class="alert alert-success">
@@ -161,27 +132,6 @@
                                 <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                               @enderror
                             </div>
-                              <!-- <select class="chosen-select">
-                                <option>Select</option>
-                                <option>$1500</option>
-                                <option>$2000</option>
-                                <option>$2500</option>
-                                <option>$3500</option>
-                                <option>$4500</option>
-                                <option>$5000</option>
-                              </select> -->
-
-                           <!-- <div class="form-group col-lg-6 col-md-12">
-                              <label>Career Level</label>
-                              <select class="chosen-select">
-                                <option>Select</option>
-                                <option>Banking</option>
-                                <option>Digital & Creative</option>
-                                <option>Retail</option>
-                                <option>Human Resources</option>
-                                <option>Management</option>
-                              </select>
-                            </div> -->
 
                             <div class="form-group col-lg-6 col-md-12">
                               <label>Experience</label>
@@ -201,11 +151,10 @@
                             </div>
 
                             <div class="form-group col-lg-6 col-md-12">
-                              <label>Genre</label>
-                              <select name="genre" id="genre" class="chosen-select">
-                                <option>Select</option>
-                                <option>Male</option>
-                                <option>Female</option>
+                              <label>Status</label>
+                              <select name="status" id="status" class="chosen-select">
+                                <option>Actif</option>
+                                <option>Bloquer</option>
                               </select>
                             </div>
 
@@ -217,30 +166,6 @@
                                     <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                                 @enderror
                             </div>
-
-                            <!-- <div class="form-group col-lg-6 col-md-12">
-                              <label>Industry</label>
-                              <select class="chosen-select">
-                                <option>Select</option>
-                                <option>Banking</option>
-                                <option>Digital & Creative</option>
-                                <option>Retail</option>
-                                <option>Human Resources</option>
-                                <option>Management</option>
-                              </select>
-                            </div> -->
-
-                           <!-- <div class="form-group col-lg-6 col-md-12">
-                              <label>Qualification</label>
-                              <select class="chosen-select">
-                                <option>Select</option>
-                                <option>Banking</option>
-                                <option>Digital & Creative</option>
-                                <option>Retail</option>
-                                <option>Human Resources</option>
-                                <option>Management</option>
-                              </select>
-                            </div> -->
 
                             <!-- Input -->
                             <div class="form-group col-lg-12 col-md-12">
@@ -258,13 +183,6 @@
                               @error('country')
                                 <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                               @enderror
-                              <!-- <select class="chosen-select">
-                                <option>Australia</option>
-                                <option>Pakistan</option>
-                                <option>Chaina</option>
-                                <option>Japan</option>
-                                <option>India</option>
-                              </select> -->
                             </div>
 
                             <!-- Input -->
@@ -274,18 +192,11 @@
                               @error('city')
                                 <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                               @enderror
-                              <!-- <select class="chosen-select">
-                                <option>Melbourne</option>
-                                <option>Pakistan</option>
-                                <option>Chaina</option>
-                                <option>Japan</option>
-                                <option>India</option>
-                              </select> -->
                             </div>
 
                             <!-- Input -->
                             <div class="form-group col-lg-12 col-md-12">
-                              <label>Addresse Complete de l'entreprise</label>
+                              <label>Addresse Complète de l'entreprise</label>
                               <input value="{{ old('address') }}" class="form-control @error('address') is-invalid @enderror" type="text" name="address" id="address" placeholder="Abomey-Calavi, Pavé CEB.">
                               @error('address')
                                 <p class="invalid-feedback fw-bold"> {{ $message }} </p>
@@ -300,31 +211,6 @@
                                     <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                                @enderror
                             </div>
-
-                            <!-- Input
-                            <div class="form-group col-lg-3 col-md-12">
-                              <label>Latitude</label>
-                              <input type="text" name="name" placeholder="Melbourne">
-                            </div>
-
-                             Input
-                            <div class="form-group col-lg-3 col-md-12">
-                              <label>Longitude</label>
-                              <input type="text" name="name" placeholder="Melbourne">
-                            </div> -->
-
-                            <!-- Input -->
-                            {{--<div class="form-group col-lg-12 col-md-12">
-                              <button class="theme-btn btn-style-three">Chercher la Localisation</button>
-                            </div>
-
-
-                            <div class="form-group col-lg-12 col-md-12">
-                              <div class="map-outer">
-                                <div class="map-canvas map-height" data-zoom="12" data-lat="-37.817085" data-lng="144.955631" data-type="roadmap" data-hue="#ffc400" data-title="Envato" data-icon-path="images/resource/map-marker.png" data-content="Melbourne VIC 3000, Australia<br><a href='mailto:info@youremail.com'>info@youremail.com</a>">
-                                </div>
-                              </div>
-                            </div>--}}
 
                             <!-- Input -->
                             <div class="form-group col-lg-12 col-md-12 text-right">

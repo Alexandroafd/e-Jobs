@@ -100,172 +100,6 @@
                   <li class="dropdown has-mega-menu" id="has-mega-menu">
                         <a href="{{ route('liste.find') }}" @class(['nav-link', 'active' => str_contains($route, 'liste.')])>Emplois</a>
                   </li>
-                    <!-- <ul>
-                      <li><a href="job-list-v5.html">Liste des emplois</a></li>
-                      <li><a href="blog-list-v2.html">Blog LIst v2</a></li>
-                      <li><a href="blog-list-v3.html">Blog LIst v3</a></li> 
-                      <li><a href="job-single-3.html">Emploi unique</a></li>
-                    </ul> -->
-                  <!-- <li class="dropdown has-mega-menu" id="has-mega-menu">
-                    <span>Find Jobs</span>
-                     <div class="mega-menu">
-                      <div class="mega-menu-bar row">
-                        <div>
-                           <ul>
-                            <li><a href="job-list-v5.html">Jobs List</a></li>
-                            <li><a href="job-single-3.html">Job Single</a></li>
-                            <li><a href="job-list-v1.html">Jobs List – v1</a></li>
-                            <li><a href="job-list-v2.html">Jobs List – v2</a></li>
-                            <li><a href="job-list-v3.html">Jobs List – v3</a></li>
-                            <li><a href="job-list-v4.html">Jobs List – v4</a></li> 
-                          </ul>
-                        </div> -->
-
-                        <!--<div class="column col-lg-3 col-md-3 col-sm-12">
-                          <ul>
-                            <li><a href="job-list-v6.html">Jobs List – v6</a></li>
-                            <li><a href="job-list-v7.html">Jobs List – v7</a></li>
-                            <li><a href="job-list-v8.html">Jobs List – v8</a></li>
-                            <li><a href="job-list-v9.html">Jobs List – v9</a></li>
-                            <li><a href="job-list-v10.html">Jobs List – v10</a></li>
-                          </ul>
-                        </div>
-
-                        <div class="column col-lg-3 col-md-3 col-sm-12">
-                          <ul>
-                            <li><a href="job-list-v11.html">Jobs List – v11</a></li>
-                            <li><a href="job-list-v12.html">Jobs List – v12</a></li>
-                            <li><a href="job-list-v13.html">Jobs List – v13</a></li>
-                            <li><a href="job-list-v14.html">Jobs List – v14</a></li>
-                            <li><a href="job-list-v15.html">Jobs List – v15</a></li>
-                            <li><a href="job-list-v16.html">Jobs List – v16</a></li>
-                            <li><a href="job-list-v17.html">Jobs List – v17</a></li>
-                          </ul> 
-                        </div> 
-
-                        <div class="column col-lg-3 col-md-3 col-sm-12">
-                          <ul>
-                            <li><a href="job-single.html">Job Single v1</a></li>
-                            <li><a href="job-single-2.html">Job Single v2</a></li> -->
-                            <!-- <li><a href="job-single-4.html">Job Single v4</a></li>
-                            <li><a href="job-single-5.html">Job Single v5</a></li>
-                            <li><a href="job-single-6.html">Job Single v6</a></li>
-                            <li><a href="job-single-7.html">Job Single v7</a></li> 
-                          </ul>
-                        </div>
-                      </div>
-                    </div> 
-                  </li> -->
-
-                  {{--<li class="dropdown">
-                    <a href="{{ route('liste.employer') }}" @class(['nav-link', 'active' => str_contains($route, 'liste.')])>Employeurs</a>
-                     <ul>
-                      <li><a href="employers-list-v3.html">Liste des employeurs</a></li>
-                      <li><a href="employers-single-v3.html">Employeurs unique</a></li>
-                      <li><a href="dashboard.html">Employeurs Dashboard</a></li>
-                    </ul> 
-                  </li>--}}
-
-                  <!-- <li class="dropdown">
-                    <span>Employers</span>
-                    <ul>
-                        <span><a href="employers-list-v3.html">Employers List</span>
-                            <li><a href="employers-single-v3.html">Employers Single</a></li>
-                            <li><a href="dashboard.html">Employers Dashboard</a></li>
-                    </ul>
-                  </li>
-                         <ul>
-                          <li><a href="employers-list-v1.html">Employers LIst v1</a></li>
-                          <li><a href="employers-list-v2.html">Employers LIst v2</a></li>
-                          <li><a href="employers-list-v3.html">Employers LIst v3</a></li>
-                          <li><a href="employers-list-v4.html">Employers LIst v4</a></li>
-                        </ul>
-                      </li>
-
-                      <li class="dropdown">
-                         <ul>
-                          <li><a href="employers-single-v1.html">Employers Single v1</a></li> 
-                          <li><a href="employers-single-v2.html">Employers Single v2</a></li> 
-                        </ul>
-                      </li> -->
-                    {{--<li class="dropdown">
-                        <a href="{{ route('blog') }}" @class(['nav-link', 'active' => str_contains($route, 'blog')])>Blog</a>
-                    </li>
-
-                    <li class="dropdown">
-                        <a href="{{ route('pages.about') }}" @class(['nav-link', 'active' => str_contains($route, 'pages.')])>A propos</a>
-                    </li>
-
-                    <li class="dropdown">
-                        <a href="{{ route('pages.contact') }}" @class(['nav-link', 'active' => str_contains($route, 'pages.')])>Contact</a>
-                    </li>--}}
-
-                  {{--<li class="dropdown">
-                    <a href="{{ route('liste.candidat') }}" @class(['nav-link', 'active' => str_contains($route, 'liste.')])>Candidats</a>
-                     <ul>
-                           <li><a href="candidates-list-v1.html">Candidates LIst v1</a></li>
-                          <li><a href="candidates-list-v2.html">Candidates LIst v2</a></li> 
-                          <li><a href="candidates-list-v3.html">Liste des candidats</a></li>
-                          <li><a href="candidates-single-v1.html">Candidat unique</a></li>
-                          <li><a href="candidate-dashboard.html">Candidat Dashboard</a></li>
-                    </ul>
-                  </li> --}}
-                         <!-- <li><a href="candidates-list-v4.html">Candidates LIst v4</a></li>
-                          <li><a href="candidates-list-v5.html">Candidates LIst v5</a></li>
-                          <li><a href="candidates-list-v6.html">Candidates LIst v6</a></li>
-                          <li><a href="candidates-list-v7.html">Candidates LIst v7</a></li> 
-                        </ul> 
-                      </li>
-
-                      <li class="dropdown">
-                         <ul>
-                           <li><a href="candidates-single-v2.html">Candidates Single v2</a></li>
-                          <li><a href="candidates-single-v3.html">Candidates Single v3</a></li>
-                          <li><a href="candidates-single-v4.html">Candidates Single v4</a></li>
-                          <li><a href="candidates-single-v5.html">Candidates Single v5</a></li> -->
-
-                  {{--<li class="dropdown">
-                    <a href="{{ route('blog') }}" @class(['nav-link', 'active' => str_contains($route, 'blog')])>Blog</a>
-                    <ul>
-                      <li><a href="blog-list-v1.html">Blog List</a></li>
-                       <li><a href="blog-list-v2.html">Blog LIst v2</a></li>
-                      <li><a href="blog-list-v3.html">Blog LIst v3</a></li> 
-                      <li><a href="blog-single.html">Blog Single</a></li>
-                    </ul>
-                  </li> 
-
-                  <li class="dropdown">
-                    <span>Pages</span>
-                    <ul>
-                    <li><a href="about.html">Panier</a></li>
-                    <li><a href="{{ route('pages.faq') }}" @class(['nav-link', 'active' => str_contains($route, 'pages.')])>FAQ's</a></li>
-                    <li><a href="invoice.html">Invoice</a></li>
-                    <li><a href="{{ route('pages.element') }}" @class(['nav-link', 'active' => str_contains($route, 'pages.')])>Ui Elements</a></li>
-                    <li><a href="{{ route('pages.contact') }}" @class(['nav-link', 'active' => str_contains($route, 'pages.')])>Contact</a></li>
-                    </ul>
-                  </li>--}}
-                    <!-- <ul>
-                      <li class="dropdown">
-                        <span>Shop</span>
-                        <ul>
-                          <li><a href="shop.html">Shop List</a></li>
-                          <li><a href="shop-single.html">Shop Single</a></li>
-                          <li><a href="shopping-cart.html">Panier</a></li>
-                          <li><a href="shop-checkout.html">Payement</a></li>
-                          <li><a href="order-completed.html">Order Completed</a></li>
-                          <li><a href="login.html">Connexion</a></li>
-                          <li><a href="register.html">Inscription</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="about.html">About</a></li>
-                      <li><a href="pricing.html">Pricing</a></li> 
-                      <li><a href="faqs.html">FAQ's</a></li>
-                      <li><a href="terms.html">Terms</a></li>
-                      <li><a href="invoice.html">Invoice</a></li>
-                      <li><a href="elements.html">Ui Elements</a></li>
-                      <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                  </li> -->
 
                   <!-- Only for Mobile View -->
                   <li class="mm-add-listing">
@@ -292,12 +126,12 @@
             </div>
 
             <div class="outer-box">
-              <!-- Add Listing 
+              <!-- Add Listing
               <a href="candidate-dashboard-cv-manager.html" class="upload-cv"> Upload your CV</a> -->
               <!-- Login/Register btn-box -->
               <div class="">
                 @if (!Auth::check())
-                    <a href="{{ route('auth.register') }}" class="theme-btn btn-style-three">Connexion / Inscription</a>  <!--class="theme-btn btn-style-three call-modal"-->
+                    <a href="{{ route('auth.login') }}" class="theme-btn btn-style-three">Connexion / Inscription</a>  <!--class="theme-btn btn-style-three call-modal"-->
                 @else
                     @if (Auth::user()->user_type == 'employer')
                         <a href="{{ route('auth.createJob') }}" class="theme-btn btn-style-one">Poster un emploi</a>
@@ -309,10 +143,10 @@
             <!-- Mobile Header -->
                 <div class="mobile-header">
                     <div class="logo"><a href="#"><img src="{{ asset('images/logo.svg') }}" alt="" title=""></a></div>
-                
+
                     <!--Nav Box-->
                     <div class="nav-outer clearfix">
-                
+
                         <div class="outer-box">
                             <!-- Login/Register -->
                             <div class="login-box">
@@ -322,7 +156,7 @@
                             </div>
                         </div>
                 </div>
-                
+
             <!-- Mobile Nav -->
             <div id="nav-mobile"></div>
         </header>
@@ -334,7 +168,7 @@
 
         <!-- Main Footer -->
         <footer class="main-footer">
-            <div class="auto-container">
+            {{--<div class="auto-container">
               <!--Widgets Section-->
               <div class="widgets-section wow fadeInUp">
                 <div class="row">
@@ -405,7 +239,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div>--}}
 
 
             <!--Bottom-->

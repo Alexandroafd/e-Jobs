@@ -36,14 +36,6 @@
                 <div class="logo"><a href="{{ route('home') }}"><img src="{{ asset('images/logo-2.svg') }}" alt="" title=""></a></div>
                 </div>
             </div>
-
-            <!-- <div class="outer-box">
-                 Login/Register
-                <div class="btn-box">
-                <a href="login-popup.html" class="theme-btn btn-style-three call-modal">Login / Register</a>
-                <a href="dashboard-post-job.html" class="theme-btn btn-style-one"><span class="btn-title">Job Post</span></a>
-                </div>
-            </div> -->
             </div>
         </div>
 
@@ -98,16 +90,6 @@
                 <!--Login Form-->
                 <form method="post" action="{{ route('auth.doregister') }}">
                 @csrf
-                {{--<div class="form-group">
-                    <div class="btn-box row">
-                    <div class="col-lg-6 col-md-12">
-                        <a href=" {{ route('auth.dashboard') }} " class="theme-btn btn-style-seven"><i class="la la-user"></i> Candidat </a>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                        <a href="{{ route('auth.createJob') }}" class="theme-btn btn-style-four"><i class="la la-briefcase"></i> Employeur </a>
-                    </div>
-                    </div>
-                </div>--}}
 
                 <div class="form-group">
                     <label>Nom</label>
@@ -153,15 +135,6 @@
 
                 <div class="bottom-box">
                     <div class="text">Vous avez déjà un compte? <a href="{{ route('auth.login') }}">   Connexion</a></div>
-                <!--<div class="divider"><span>or</span></div>
-                <div class="btn-box row">
-                    <div class="col-lg-6 col-md-12">
-                    <a href="#" class="theme-btn social-btn-two facebook-btn"><i class="fab fa-facebook-f"></i> Connexion avec Facebook</a>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                    <a href="#" class="theme-btn social-btn-two google-btn"><i class="fab fa-google"></i> Connexion avec Gmail</a>
-                    </div>
-                </div>-->
                 </div>
             </div>
             </div>

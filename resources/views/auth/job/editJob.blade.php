@@ -41,23 +41,6 @@
       
                       <div class="widget-content">
       
-                        <!-- <div class="post-job-steps">
-                          <div class="step">
-                            <span class="icon flaticon-briefcase"></span>
-                            <h5>Détails de l'emploi</h5>
-                          </div>
-      
-                          <div class="step">
-                            <span class="icon flaticon-money"></span>
-                            <h5>Package & Paiement</h5>
-                          </div>
-      
-                          <div class="step">
-                            <span class="icon flaticon-checked"></span>
-                            <h5>Confirmation</h5>
-                          </div>
-                        </div> -->
-      
                         @if (Session::has('success'))
                             <div class="alert alert-success">
                                 <p class="mb-0 pb-0"> {{ Session::get('success') }} </p>
@@ -140,28 +123,7 @@
                               @error('salary')
                                 <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                               @enderror
-                              <!-- <select class="chosen-select">
-                                <option>Select</option>
-                                <option>$1500</option>
-                                <option>$2000</option>
-                                <option>$2500</option>
-                                <option>$3500</option>
-                                <option>$4500</option>
-                                <option>$5000</option> 
-                              </select> -->
                             </div>
-      
-                           <!-- <div class="form-group col-lg-6 col-md-12">
-                              <label>Career Level</label>
-                              <select class="chosen-select">
-                                <option>Select</option>
-                                <option>Banking</option>
-                                <option>Digital & Creative</option>
-                                <option>Retail</option>
-                                <option>Human Resources</option>
-                                <option>Management</option>
-                              </select>
-                            </div> -->
       
                             <div class="form-group col-lg-6 col-md-12">
                               <label>Experience</label>
@@ -181,12 +143,23 @@
                             </div>
       
                             <div class="form-group col-lg-6 col-md-12">
+                                <label>Statut</label>
+                                <select name="status" id="status" class="chosen-select">
+                                    <option value="1" {{ ($job->status == 1) ? 'sélectionné' : '' }}>Actif</option>
+                                    <option value="0" {{ ($job->status == 0) ? 'sélectionné' : '' }}>Bloquer</option>
+                                </select>                                
+                                @error('status')
+                                  <p class="invalid-feedback fw-bold"> {{ $message }} </p>
+                                @enderror
+                            </div>
+                            
+                            <!--<div class="form-group col-lg-6 col-md-12">
                               <label>Genre</label>
                               <select name="genre" id="genre" class="chosen-select">
                                 <option value="1" {{ ($job->genre == 1) ? 'sélectionné' : '' }}>Masculin</option>
                                 <option value="2" {{ ($job->genre == 2) ? 'sélectionné' : '' }}>Féminin</option>
                               </select>
-                            </div>
+                            </div>-->
 
                             <!-- Input -->
                             <div class="form-group col-lg-6 col-md-12">
@@ -196,30 +169,6 @@
                                     <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                                 @enderror
                             </div>
-      
-                            <!-- <div class="form-group col-lg-6 col-md-12">
-                              <label>Industry</label>
-                              <select class="chosen-select">
-                                <option>Select</option>
-                                <option>Banking</option>
-                                <option>Digital & Creative</option>
-                                <option>Retail</option>
-                                <option>Human Resources</option>
-                                <option>Management</option>
-                              </select>
-                            </div> -->
-      
-                           <!-- <div class="form-group col-lg-6 col-md-12">
-                              <label>Qualification</label>
-                              <select class="chosen-select">
-                                <option>Select</option>
-                                <option>Banking</option>
-                                <option>Digital & Creative</option>
-                                <option>Retail</option>
-                                <option>Human Resources</option>
-                                <option>Management</option>
-                              </select>
-                            </div> -->
       
                             <!-- Input -->
                             <div class="form-group col-lg-12 col-md-12">
@@ -237,13 +186,6 @@
                               @error('country')
                                 <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                               @enderror
-                              <!-- <select class="chosen-select">
-                                <option>Australia</option>
-                                <option>Pakistan</option>
-                                <option>Chaina</option>
-                                <option>Japan</option>
-                                <option>India</option>
-                              </select> -->
                             </div>
       
                             <!-- Input -->
@@ -253,18 +195,11 @@
                               @error('city')
                                 <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                               @enderror
-                              <!-- <select class="chosen-select">
-                                <option>Melbourne</option>
-                                <option>Pakistan</option>
-                                <option>Chaina</option>
-                                <option>Japan</option>
-                                <option>India</option>
-                              </select> -->
                             </div>
       
                             <!-- Input -->
                             <div class="form-group col-lg-12 col-md-12">
-                              <label>Addresse Complete de l'entreprise</label>
+                              <label>Addresse Complète de l'entreprise</label>
                               <input value="{{ $job->address }}" class="form-control @error('address') is-invalid @enderror" type="text" name="address" id="address" placeholder="Abomey-Calavi, Pavé CEB.">
                               @error('address')
                                 <p class="invalid-feedback fw-bold"> {{ $message }} </p>
@@ -279,18 +214,6 @@
                                     <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                                @enderror
                             </div>
-      
-                            <!-- Input 
-                            <div class="form-group col-lg-3 col-md-12">
-                              <label>Latitude</label>
-                              <input type="text" name="name" placeholder="Melbourne">
-                            </div>
-      
-                             Input 
-                            <div class="form-group col-lg-3 col-md-12">
-                              <label>Longitude</label>
-                              <input type="text" name="name" placeholder="Melbourne">
-                            </div> -->
       
                             <!-- Input -->
                             <div class="form-group col-lg-12 col-md-12">

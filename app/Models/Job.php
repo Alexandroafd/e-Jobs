@@ -9,6 +9,27 @@ class Job extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'description',
+        'responsability',
+        'category_id',
+        'job_type_id',
+        'user_id',
+        'salary',
+        'experience',
+        'date_limite',
+        'country',
+        'city',
+        'address',
+        'company_location',
+        'company_email',
+        'company_name',
+        'company_website',
+        'status',
+        'isFeatured',
+    ];
+
     public function jobType()
     {
         return $this->belongsTo(JobType::class);

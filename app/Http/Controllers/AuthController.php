@@ -199,7 +199,7 @@ class AuthController extends Controller
             $user ->name = $request->name;
             $user ->email = $request->email;
             $user ->phone = $request->phone;
-            //$user ->image = $request->image;
+            $user ->genre = $request->genre;
             $user ->diplome = $request->diplome;
             $user ->experience = $request->experience;
             $user ->salary = $request->salary;
@@ -370,7 +370,6 @@ class AuthController extends Controller
             'job_type' => 'required',
             'salary' => 'required',
             'experience' => 'required',
-            'genre' => 'required',
             'date_limite' => 'required',
             'country' => 'required',
             'city' => 'required',
@@ -392,7 +391,6 @@ class AuthController extends Controller
             $job->user_id = Auth::user()->id;
             $job->salary = $request->salary;
             $job->experience = $request->experience;
-            $job->genre = $request->genre;
             $job->date_limite = $request->date_limite;
             $job->country = $request->country;
             $job->city = $request->city;
@@ -451,12 +449,12 @@ class AuthController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'title' => 'required',
+            'status' => 'required',
             'description' => 'required',
             'category' => 'required',
             'job_type' => 'required',
             'salary' => 'required',
             'experience' => 'required',
-            'genre' => 'required',
             'date_limite' => 'required',
             'country' => 'required',
             'city' => 'required',
@@ -472,13 +470,13 @@ class AuthController extends Controller
             $job = Job::find($id);
 
             $job->title = $request->title;
+            $job->status = $request->status;
             $job->description = $request->description;
             $job->category_id = $request->category;
             $job->job_type_id = $request->job_type;
             $job->user_id = Auth::user()->id;
             $job->salary = $request->salary;
             $job->experience = $request->experience;
-            $job->genre = $request->genre;
             $job->date_limite = $request->date_limite;
             $job->country = $request->country;
             $job->city = $request->city;

@@ -54,14 +54,6 @@
                       <h4>Candidats</h4>
     
                       <div class="chosen-outer">
-                        <!--Tabs Box-->
-                        <!-- <select class="chosen-select">
-                          <option>Last 6 Months</option>
-                          <option>Last 12 Months</option>
-                          <option>Last 16 Months</option>
-                          <option>Last 24 Months</option>
-                          <option>Last 5 year</option>
-                        </select> -->
                       </div>
                     </div>
     
@@ -90,7 +82,7 @@
                                     <td> {{ \Carbon\Carbon::parse($jobsApplication->job->applied_date)->format('d M, Y') }} </td>
                                     <td>
                                         @if ($jobsApplication->job->status == 1)
-                                            <div class="status" > Active </div>
+                                            <div class="status" > Actif </div>
                                         @else
                                             <div class="status"> Bloquer </div>
                                         @endif
@@ -99,7 +91,7 @@
                                       <div class="option-box">
                                         <ul class="option-list">
                                             <li><button><a href="{{ route('jobDetail', $jobsApplication->job_id) }}" data-text="Afficher"><span class="la la-eye"></span></a></button></li>
-                                            <li><button><a href="{{ route('auth.removeJobs', $jobsApplication->id) }}" onclick="deletejob( {{ $jobsApplication->id }} )" data-text="Supprimer"><span class="la la-trash"></span></a></button></li>
+                                            <li><button><a href="{{ route('auth.removeJobs', $jobsApplication->id) }}" onclick="return confirm('Voulez-vous vraiment supprimer ce job ?')" data-text="Supprimer"><span class="la la-trash"></span></a></button></li>
                                         </ul> 
                                       </div>
                                     </td>

@@ -19,7 +19,7 @@
                 <li><a href="{{ route('auth.changePassword') }}"><i class="la la-lock"></i>Changer le mot de passe</a></li>
                 <!-- <li><a href="dashboard-profile.html"><i class="la la-user-alt"></i>Voir le Profile</a></li> -->
                 <li><a href="{{ route('auth.logout') }}"><i class="la la-sign-out"></i>Déconnexion</a></li>
-                <li><a href="{{ route('auth.deleteProfile') }}"><i class="la la-trash"></i>Supprimer le Profile</a></li>
+                <li><a href="{{ route('auth.deleteProfile') }}"><i class="la la-trash"></i>Supprimer le Profil</a></li>
               </ul>
           </div>
         </div>
@@ -54,14 +54,6 @@
                       <h4> Emplois sauvegardés </h4>
     
                       <div class="chosen-outer">
-                        <!--Tabs Box-->
-                        <!-- <select class="chosen-select">
-                          <option>Last 6 Months</option>
-                          <option>Last 12 Months</option>
-                          <option>Last 16 Months</option>
-                          <option>Last 24 Months</option>
-                          <option>Last 5 year</option>
-                        </select> -->
                       </div>
                     </div>
     
@@ -97,7 +89,7 @@
                                       <div class="option-box">
                                         <ul class="option-list">
                                             <li><button><a href="{{ route('jobDetail', $savedJob->job_id) }}" data-text="Afficher"><span class="la la-eye"></span></a></button></li>
-                                            <li><button><a href="{{ route('auth.removeSaveJob', $savedJob->id) }}" onclick="deletejob( {{ $savedJob->id }} )" data-text="Supprimer"><span class="la la-trash"></span></a></button></li>
+                                            <li><button><a href="{{ route('auth.removeSaveJob', $savedJob->id) }}" onclick="return confirm('Voulez-vous vraiment supprimer ce job ?')" data-text="Supprimer"><span class="la la-trash"></span></a></button></li>
                                         </ul> 
                                       </div>
                                     </td>

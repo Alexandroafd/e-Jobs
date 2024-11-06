@@ -11,17 +11,9 @@
               <ul class="navigation">
                 <li><a href="{{ route('admin.dashboard') }}"> <i class="la la-home"></i> Dashboard </a></li>
                 <li class="active"><a href="{{ route('admin.users.userlist') }}"><i class="la la-user-tie"></i> Users </a></li>
-               <!-- <li><a href="dashboard-post-job.html"><i class="la la-paper-plane"></i>Post a New Job</a></li> -->
                 <li><a href="{{ route('admin.jobs') }}"><i class="la la-briefcase"></i> Jobs </a></li>
                 <li><a href="{{ route('admin.jobsApplied') }}"><i class="la la-file-invoice"></i> Jobs Applications </a></li> 
-                <!-- <li><a href="dashboard-resumes.html"><i class="la la-bookmark-o"></i>Shortlisted Resumes</a></li> 
-                <li><a href="dashboard-packages.html"><i class="la la-box"></i>Packages</a></li>
-                <li><a href="dashboard-messages.html"><i class="la la-comment-o"></i>Messages</a></li>
-                <li><a href="dashboard-resume-alerts.html"><i class="la la-bell"></i>Resume Alerts</a></li>
-                <li><a href="dashboard-change-password.html"><i class="la la-lock"></i>Change Password</a></li>
-                <li><a href="dashboard-company-profile.html"><i class="la la-user-alt"></i>View Profile</a></li> -->
                 <li><a href="{{ route('auth.logout') }}"><i class="la la-sign-out"></i>Logout</a></li>
-               <!-- <li><a href="index.html"><i class="la la-trash"></i>Delete Profile</a></li> -->
               </ul>
             </div>
         </div>
@@ -117,28 +109,7 @@
                                   @error('salary')
                                     <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                                   @enderror
-                                  <!-- <select class="chosen-select">
-                                    <option>Select</option>
-                                    <option>$1500</option>
-                                    <option>$2000</option>
-                                    <option>$2500</option>
-                                    <option>$3500</option>
-                                    <option>$4500</option>
-                                    <option>$5000</option> 
-                                  </select> -->
                                 </div>
-          
-                               <!-- <div class="form-group col-lg-6 col-md-12">
-                                  <label>Career Level</label>
-                                  <select class="chosen-select">
-                                    <option>Select</option>
-                                    <option>Banking</option>
-                                    <option>Digital & Creative</option>
-                                    <option>Retail</option>
-                                    <option>Human Resources</option>
-                                    <option>Management</option>
-                                  </select>
-                                </div> -->
           
                                 <div class="form-group col-lg-6 col-md-12">
                                   <label>Experience</label>
@@ -174,30 +145,6 @@
                                     @enderror
                                 </div>
           
-                                <!-- <div class="form-group col-lg-6 col-md-12">
-                                  <label>Industry</label>
-                                  <select class="chosen-select">
-                                    <option>Select</option>
-                                    <option>Banking</option>
-                                    <option>Digital & Creative</option>
-                                    <option>Retail</option>
-                                    <option>Human Resources</option>
-                                    <option>Management</option>
-                                  </select>
-                                </div> -->
-          
-                               <!-- <div class="form-group col-lg-6 col-md-12">
-                                  <label>Qualification</label>
-                                  <select class="chosen-select">
-                                    <option>Select</option>
-                                    <option>Banking</option>
-                                    <option>Digital & Creative</option>
-                                    <option>Retail</option>
-                                    <option>Human Resources</option>
-                                    <option>Management</option>
-                                  </select>
-                                </div> -->
-          
                                 <!-- Input -->
                                 <div class="form-group col-lg-12 col-md-12">
                                   <label>Date limite</label>
@@ -214,13 +161,6 @@
                                   @error('country')
                                     <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                                   @enderror
-                                  <!-- <select class="chosen-select">
-                                    <option>Australia</option>
-                                    <option>Pakistan</option>
-                                    <option>Chaina</option>
-                                    <option>Japan</option>
-                                    <option>India</option>
-                                  </select> -->
                                 </div>
           
                                 <!-- Input -->
@@ -230,13 +170,6 @@
                                   @error('city')
                                     <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                                   @enderror
-                                  <!-- <select class="chosen-select">
-                                    <option>Melbourne</option>
-                                    <option>Pakistan</option>
-                                    <option>Chaina</option>
-                                    <option>Japan</option>
-                                    <option>India</option>
-                                  </select> -->
                                 </div>
           
                                 <!-- Input -->
@@ -275,18 +208,6 @@
                                         <p class="invalid-feedback fw-bold"> {{ $message }} </p>
                                    @enderror
                                 </div>
-          
-                                <!-- Input 
-                                <div class="form-group col-lg-3 col-md-12">
-                                  <label>Latitude</label>
-                                  <input type="text" name="name" placeholder="Melbourne">
-                                </div>
-          
-                                 Input 
-                                <div class="form-group col-lg-3 col-md-12">
-                                  <label>Longitude</label>
-                                  <input type="text" name="name" placeholder="Melbourne">
-                                </div> -->
           
                                 <!-- Input -->
                                 <div class="form-group col-lg-12 col-md-12">
